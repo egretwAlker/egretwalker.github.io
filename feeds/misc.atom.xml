@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>loghj - misc</title><link href="/" rel="alternate"></link><link href="/feeds/misc.atom.xml" rel="self"></link><id>/</id><updated>2022-02-24T00:00:00+01:00</updated><entry><title>Intro</title><link href="/intro.html" rel="alternate"></link><published>2022-02-24T00:00:00+01:00</published><updated>2022-02-24T00:00:00+01:00</updated><author><name>egretwalker</name></author><id>tag:None,2022-02-24:/intro.html</id><content type="html">&lt;p&gt;索邦大学 L1 在读。&lt;/p&gt;
+&lt;p&gt;正在学习 LEAN。在博客里会写一些 OI 题解以缅怀高中可怜的时光。&lt;/p&gt;</content><category term="misc"></category></entry></feed>
