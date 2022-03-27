@@ -4,11 +4,16 @@ Category: Langues
 
 我也不知道自己最终会选择参加德语考试还是英语考试。无论如何还是先准备一下吧！
 
+- [字母表](#字母表)
 - [介词的使用：](#介词的使用)
   - [时间](#时间)
   - [空间](#空间)
 - [词汇](#词汇)
 - [动词变位](#动词变位)
+
+## 字母表
+
+A (ah) B (beh) C (tseh) D (deh) E (eh) F(eff) G (geh) H (haa) I (ee) J (yot) K (kah) L (el) M (em) N (en) O (oh) P (peh) Q (kuh) R (err) S (es) T (teh) U (uh) V (fow) W (veh) X (iks) Y (ypsilon) Z (tset)
 
 ## 介词的使用：
 
@@ -43,6 +48,14 @@ from...to...
 
 Von 9 bis 10 habe ich Deutsch.  
 Von Montag bis Freitag haben wir Schule.
+
+季节
+
+| der Winter     | der Frühling   | der Sommer       | der Herbst                 | der Winter |
+| :------------- | :------------- | :--------------- | :------------------------- | :--------- |
+| Januar Februar | März April Mai | Juni Juli August | September Oktober November | Dezember   |
+
+im Winter
 
 ### 空间
 
