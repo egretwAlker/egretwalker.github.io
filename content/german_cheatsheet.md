@@ -90,3 +90,12 @@ am Montag/Dienstag/Mittwoch/Donnerstag/Freitag/Samstag/Sonntag, am Wochenende.
 | :------- | :----------------------------- |
 | lesen    | du liest, er/sie/es liest      |
 | sprechen | du sprichst, er/sie/es spricht |
+
+| subject   | sein |
+| :-------- | :--- |
+| ich       | bin  |
+| du        | bist |
+| er/sie/es | ist  |
+| wir       | sind |
+| ihr       | seid |
+| sie/Sie   | sind |
