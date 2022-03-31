@@ -71,6 +71,19 @@ der Hausmeister, die Lehrerin, der Programmierer, die Juristin, der Elektriker..
 
 am Montag/Dienstag/Mittwoch/Donnerstag/Freitag/Samstag/Sonntag, am Wochenende. 
 
+der Bahn·hof, die U-Bahn, der Flug·hafen, der Fischmarkt, die Kirche, das Rat·haus, der Hafen. 
+
+der Fluss, das Hotel, die Straße. 
+
+冠词变化表
+
+| genre | article | exemple |
+| :- | :- | :- |
+| maskulin | der | ein/kein Bus |
+| neutrum | das | ein/kein Hotel |
+| feminin | die | eine/keine U-Bahn |
+| Plural | die | (rien)/keine Autos |
+
 ## 动词变位
 
 规则
