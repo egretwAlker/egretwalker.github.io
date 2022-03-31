@@ -37,3 +37,19 @@ STATIC_PATHS = [ 'images',
                  'extra',]
 
 EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'},}
+
+MARKDOWN = {
+    'extension_configs': {
+        # Needed for code syntax highlighting
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight'
+        },
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        # This is for enabling the TOC generation
+        'markdown.extensions.toc': {
+            'title': 'Table of Contents',
+        },
+    },
+    'output_format': 'html5',
+}
