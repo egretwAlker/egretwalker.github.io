@@ -72,12 +72,12 @@ der Fluss, das Hotel, die Straße.
 
 冠词变化表
 
-| genre | article | exemple |
-| :- | :- | :- |
-| maskulin | der | ein/kein Bus |
-| neutrum | das | ein/kein Hotel |
-| feminin | die | eine/keine U-Bahn |
-| Plural | die | (rien)/keine Autos |
+| genre    | article | exemple            |
+| :------- | :------ | :----------------- |
+| maskulin | der     | ein/kein Bus       |
+| neutrum  | das     | ein/kein Hotel     |
+| feminin  | die     | eine/keine U-Bahn  |
+| plural   | die     | (rien)/keine Autos |
 
 ## 动词变位
 
@@ -98,6 +98,8 @@ der Fluss, das Hotel, die Straße.
 | :------- | :----------------------------- |
 | lesen    | du liest, er/sie/es liest      |
 | sprechen | du sprichst, er/sie/es spricht |
+| haben    | du hast, er/sie/es hat         |
+| geben    | du gibst, er/sie/es gibt       |
 
 | subject   | sein |
 | :-------- | :--- |
