@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
-        <title>loghj - Categories</title>
+        <title>线性代数机械方法概要</title>
         <link rel="stylesheet" href="https://egretwalker.github.io/theme/css/main.css" />
         <link href="https://egretwalker.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="loghj Atom Feed" />
 
@@ -34,6 +34,7 @@
             });
         </script>
 
+        <meta name="description" content="（记住了，一个 $\deg P \le 3$ 的多项式有 4 项！） Points de Vue Système Linéaire Représentation Matricielle Espace Vectoriel Pour obtenir Img et ker..." />
 </head>
 
 <body id="index" class="home">
@@ -41,20 +42,92 @@
                 <h1><a href="https://egretwalker.github.io/">loghj</a></h1>
                 <nav><ul>
                     <li><a href="https://egretwalker.github.io/category/langues.html">Langues</a></li>
-                    <li><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
+                    <li class="active"><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
                     <li><a href="https://egretwalker.github.io/category/timus.html">Timus</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-
 <section id="content" class="body">
-    <h1>Categories for loghj</h1>
-    <ul>
-        <li><a href="https://egretwalker.github.io/category/langues.html">Langues</a> (1)</li>
-        <li><a href="https://egretwalker.github.io/category/misc.html">misc</a> (1)</li>
-        <li><a href="https://egretwalker.github.io/category/timus.html">Timus</a> (2)</li>
-    </ul>
-</section>
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://egretwalker.github.io/drafts/xian-xing-dai-shu-ji-jie-fang-fa-gai-yao.html" rel="bookmark"
+           title="Permalink to 线性代数机械方法概要">线性代数机械方法概要</a></h1>
+    </header>
 
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2022-04-09T00:00:00+02:00">
+                Published: Sat 09 April 2022
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://egretwalker.github.io/author/egretwalker.html">egretwalker</a>
+        </address>
+<p>In <a href="https://egretwalker.github.io/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <p>（记住了，一个 $\deg P \le 3$ 的多项式有 4 项！）</p>
+<h2 id="points-de-vue">Points de Vue</h2>
+<ul>
+<li>Système Linéaire</li>
+<li>Représentation Matricielle</li>
+<li>Espace Vectoriel</li>
+</ul>
+<h3 id="pour-obtenir-img-et-ker-explicitement">Pour obtenir Img et ker explicitement...</h3>
+<h4 id="methode">Méthode</h4>
+<p>$A \in M_{n, m}(𝕂)$</p>
+<p>Pour obtenir l'image et le noyau dans un pivot de Gauss: </p>
+<p>On fait le pivot de Gauss sur les lignes, on obtient le $\text{rg}(A)$ $\dim \ker A$. </p>
+<ul>
+<li>
+<p>En posant repectivement les variables libres 1, et réduisant les autres terms, on obtient $\ker A$</p>
+</li>
+<li>
+<p>En choisissant les colonnes de pivot dans A, on obtient $\text{Img} A$</p>
+</li>
+</ul>
+<h4 id="exemple">Exemple</h4>
+<p>$$
+\begin{pmatrix}
+1 &amp; -1 &amp; 1 &amp; 1 \\
+5 &amp; 2 &amp; -1 &amp; -3 \\
+-3 &amp; -4 &amp; 3 &amp; 2 \\
+6 &amp; 1 &amp; 0 &amp; -2
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+1 &amp; -1 &amp; 1 &amp; 1 \\
+0 &amp; 7 &amp; -6 &amp; -8 \\
+0 &amp; 0 &amp; 0 &amp; -3 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+$$</p>
+<!-- Why \\\\ you might ask! Oh the stupid python-markdown. I will fix it one day (seems a little difficult for me though) -->
+
+<p>$\text{Img} A = \text{Vect}(C1, C2, C3)$<br>
+$\ker A = (-1, 6, 7, 0)$</p>
+<ul>
+<li>Mais on peut également résoudre cette question par système linéaire. </li>
+</ul>
+<p>$$
+\begin{pmatrix}
+1 &amp; -1 &amp; 1 &amp; 1  &amp; a\\
+5 &amp; 2 &amp; -1 &amp; -3 &amp; b\\
+-3 &amp; -4 &amp; 3 &amp; 2 &amp; c\\
+6 &amp; 1 &amp; 0 &amp; -2  &amp; d
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+1 &amp; -1 &amp; 1 &amp; 1  &amp; a \\
+0 &amp; 7 &amp; -6 &amp; -8 &amp; b-5a \\
+0 &amp; 0 &amp; 0 &amp; -3  &amp; -2a+b+c\\
+0 &amp; 0 &amp; 0 &amp; 0   &amp; -a-b+d
+\end{pmatrix}
+$$</p>
+<p>Donc $\text{Img}A = {(a, b, c, d)|-a-b+d = 0}$. Cela est encore une fois un noyau. Alors on pose respectivement b=1, c=1, d=1...</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>
