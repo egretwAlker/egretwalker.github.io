@@ -32,7 +32,7 @@ on the first of January
 
 im (masculine) / in der (feminine)
 
-im Juli, Im Sommer.
+im Juli, im Sommer.
 
 in der Nacht.  
 at night.
