@@ -53,3 +53,6 @@ MARKDOWN = {
     },
     'output_format': 'html5',
 }
+
+READERS = {'html': None}
+TEMPLATE_PAGES = {'pages/dfts.html': 'dfts.html'}
