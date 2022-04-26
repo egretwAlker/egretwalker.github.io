@@ -41,7 +41,6 @@
         <header id="banner" class="body">
                 <h1><a href="https://egretwalker.github.io/">loghj</a></h1>
                 <nav><ul>
-                    <li><a href="https://egretwalker.github.io/category/langues.html">Langues</a></li>
                     <li class="active"><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
                     <li><a href="https://egretwalker.github.io/category/timus.html">Timus</a></li>
                 </ul></nav>
@@ -79,6 +78,56 @@ $$</p>
 (\int_a^b fg)^2 \le (\int_a^b f^2)(\int_a^b g^2)
 $$</p>
 <p>$\int$ 完全可以被替换成 $\sum$。只可惜只能在实数域下。但这还是一个超级漂亮的证明。对我来说。</p>
+<h1 id="tricks-subset">Tricks Subset</h1>
+<h2 id="lextremite-en-valeur-absolue-4">L'extrêmité en valeur absolue 通用度：4</h2>
+<p>$$
+\max(a, b) = (a+b+|a-b|)/2
+$$</p>
+<p>$$
+\min(a, b) = (a+b-|a-b|)/2
+$$</p>
+<h2 id="lextremite-des-ensembles-2">L'extrêmité des ensembles 通用度：2</h2>
+<p>On note $(O_i)$ la famille de tous les sous-ensembles ouverts de $E$. Alors $\mathring E = \text{le maximum de }(O_i) = \bigcup_i O_i$. </p>
+<p>On note $(F_i)$ la famille de tous les sur-ensembles fermés de $E$. Alors $\bar E = \text{le minimum de }(F_i) = \bigcap_i F_i$. </p>
+<p>Donc ${\mathring E}^c = \bigcap_i {O_i}^c = \bar {E^c}$</p>
+<ul>
+<li>稍微有同样感觉的一个题：</li>
+</ul>
+<blockquote>
+<p>$p : E \rightarrow F$ une projection. Alors $E = \text{Im}(p)\bigoplus\ker(p)$.<br>
+$\ker(p) = {x_2 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))} = {x - x_1 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))} = \text{Im}(Id-f)$</p>
+</blockquote>
+<h2 id="decomposition-loi-binomiale-3">Décomposition - loi binomiale 通用度：3</h2>
+<p>Si $X ~ B(n, p)$, alors $X = X_1 + X_2 + ... + X_n$ où $\forall k, X_k ~ B(p)$ et ils sont mutullement indépandants. </p>
+<p>有时 loi de Poission 相关的也可以这样子来思考（但能不能这样子证明呢。。？）</p>
+<h2 id="fonction-bijectivite-35">Fonction - bijectivité 通用度：3.5</h2>
+<p>$Id = f\circ g$ $\implies$ $f$ surjective, $g$ injective. </p>
+<p>Si $f$ bijective et $Id = f\circ g$; Alors $g = f^{-1}$:<br>
+$f^{-1}\circ Id = f^{-1}\circ f \circ g$, donc $f^{-1} = g$. </p>
+<ul>
+<li>一些典型的事情可以用这个来做</li>
+</ul>
+<blockquote>
+<p>$I = AB$; Alors $A$ inversible et $A^{-1} = B$:<br>
+$\text{Im}(A)=\R^n$ donc, $\text{rg}(A) = n$, $A$ inversible...<br>
+又或者 application linéaire (dimension finie) 也是差不多的思路。</p>
+</blockquote>
+<h2 id="analyse-synthese-5">Analyse - Synthèse 通用度：5</h2>
+<p>例子：</p>
+<blockquote>
+<p>$E$ ev et $s \in L(E)$. $s\circ s = Id_E$<br>
+Mq les seules valeurs propores possibles de $s$ sont $1$ et $-1$:<br>
+...<br>
+Soit $x \in E$. Mq $\exist x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm$:<br>
+<strong>Analyse</strong><br>
+Soit $x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm$.<br>
+Alors $s(x) = s(x_+ + x_-) = x_+ - x_-$<br>
+De plus $x = x_+ + x_-$.<br>
+Donc $x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}$.<br>
+<strong>Synthèse</strong><br>
+Mq $x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}$ convient...</p>
+</blockquote>
+<p>这是很妙的啊。在 existe 那一步，我们想要提供一组解，但是没什么想法。于是我们通过 Analyse 来考虑解的必要形式。虽然说最终过程去掉 Analyse 也是说得通的。</p>
     </div><!-- /.entry-content -->
 
   </article>
