@@ -1,5 +1,6 @@
 Title: German Cheatsheet
 Date: 2022-03-18
+Status: draft
 Category: Langues
 
 我也不知道自己最终会选择参加德语考试还是英语考试。无论如何还是先准备一下吧！
