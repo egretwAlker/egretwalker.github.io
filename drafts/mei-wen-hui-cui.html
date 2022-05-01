@@ -15,7 +15,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
 
         <!-- To automatically render math in text elements, include the auto-render extension: -->
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
@@ -32,9 +32,11 @@
                   throwOnError : false
                 });
             });
-        </script>
+        </script> -->
 
-        <meta name="description" content="LEAN: 如果...我将能够解决哥德巴赫猜想：不（难）可（以）计算的函数 一些美妙的证明 L'Inégalité de Cauchy-Schwarz $$ \int_a^b (xf(t)+g(t))^2 dt = x^2\int_a^b f^2 …" />
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+
+        <meta name="description" content="LEAN: 如果...我将能够解决哥德巴赫猜想：不（难）可（以）计算的函数 一些美妙的证明 L'Inégalité de Cauchy-Schwarz \int_a^b (xf(t)+g(t))^2 dt = x^2\int_a^b f^2 …" />
 </head>
 
 <body id="index" class="home">
@@ -65,69 +67,116 @@
 <p>In <a href="https://egretwalker.github.io/category/misc.html">misc</a>.</p>
 
 </footer><!-- /.post-info -->      <p><a href="https://xenaproject.wordpress.com/2019/06/11/the-inverse-of-a-bijection/">LEAN: 如果...我将能够解决哥德巴赫猜想：不（难）可（以）计算的函数</a></p>
-<h1 id="_1">一些美妙的证明</h1>
-<h2 id="linegalite-de-cauchy-schwarz">L'Inégalité de Cauchy-Schwarz</h2>
-<p>$$
+<h1>一些美妙的证明</h1>
+<h2>L'Inégalité de Cauchy-Schwarz</h2>
+<p>
+<script type="math/tex; mode=display">
 \int_a^b (xf(t)+g(t))^2 dt = x^2\int_a^b f^2+x(2\int_a^b fg)+\int_a^b g^2 \ge 0
-$$</p>
+</script>
+</p>
 <p>Donc</p>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
 \Delta = 4((\int_a^b fg)^2-(\int_a^b f^2)(\int_a^b g^2)) \le 0
-$$</p>
-<p>$$
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
 (\int_a^b fg)^2 \le (\int_a^b f^2)(\int_a^b g^2)
-$$</p>
-<p>$\int$ 完全可以被替换成 $\sum$。只可惜只能在实数域下。但这还是一个超级漂亮的证明。对我来说。</p>
-<h1 id="tricks-subset">Tricks Subset</h1>
-<h2 id="lextremite-en-valeur-absolue-4">L'extrêmité en valeur absolue 通用度：4</h2>
-<p>$$
+</script>
+</p>
+<p>
+<script type="math/tex">\int</script> 完全可以被替换成 <script type="math/tex">\sum</script>。只可惜只能在实数域下。但这还是一个超级漂亮的证明。对我来说。</p>
+<p><strong>Remarque</strong>: 当 <script type="math/tex">f,g</script> continues 的是否，取等条件等价于两函数 proportionnelles。</p>
+<h1>Tricks Subset</h1>
+<h2>L'extrêmité en valeur absolue 通用度：4</h2>
+<p>
+<script type="math/tex; mode=display">
 \max(a, b) = (a+b+|a-b|)/2
-$$</p>
-<p>$$
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
 \min(a, b) = (a+b-|a-b|)/2
-$$</p>
-<h2 id="lextremite-des-ensembles-2">L'extrêmité des ensembles 通用度：2</h2>
-<p>On note $(O_i)$ la famille de tous les sous-ensembles ouverts de $E$. Alors $\mathring E = \text{le maximum de }(O_i) = \bigcup_i O_i$. </p>
-<p>On note $(F_i)$ la famille de tous les sur-ensembles fermés de $E$. Alors $\bar E = \text{le minimum de }(F_i) = \bigcap_i F_i$. </p>
-<p>Donc ${\mathring E}^c = \bigcap_i {O_i}^c = \bar {E^c}$</p>
+</script>
+</p>
+<h2>L'extrêmité des ensembles 通用度：2</h2>
+<p>On note <script type="math/tex">(O_i)</script> la famille de tous les sous-ensembles ouverts de <script type="math/tex">E</script>. Alors <script type="math/tex">\mathring E = \text{le maximum de }(O_i) = \bigcup_i O_i</script>. </p>
+<p>On note <script type="math/tex">(F_i)</script> la famille de tous les sur-ensembles fermés de <script type="math/tex">E</script>. Alors <script type="math/tex">\bar E = \text{le minimum de }(F_i) = \bigcap_i F_i</script>. </p>
+<p>Donc <script type="math/tex">{\mathring E}^c = \bigcap_i {O_i}^c = \bar {E^c}</script>
+</p>
 <ul>
 <li>稍微有同样感觉的一个题：</li>
 </ul>
 <blockquote>
-<p>$p : E \rightarrow F$ une projection. Alors $E = \text{Im}(p)\bigoplus\ker(p)$.<br>
-$\ker(p) = {x_2 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))} = {x - x_1 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))} = \text{Im}(Id-f)$</p>
+<p>
+<script type="math/tex">p : E \rightarrow F</script> une projection. Alors <script type="math/tex">E = \text{Im}(p)\bigoplus\ker(p)</script>.<br />
+Mq <script type="math/tex">\ker(p) = \text{Im}(Id-f)</script>:<br />
+<script type="math/tex">\ker(p) = \{x_2 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \{x - x_1 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \text{Im}(Id-f)</script>
+</p>
 </blockquote>
-<h2 id="decomposition-loi-binomiale-3">Décomposition - loi binomiale 通用度：3</h2>
-<p>Si $X ~ B(n, p)$, alors $X = X_1 + X_2 + ... + X_n$ où $\forall k, X_k ~ B(p)$ et ils sont mutullement indépandants. </p>
+<h2>Décomposition - loi binomiale 通用度：3</h2>
+<p>Si <script type="math/tex">X ~ B(n, p)</script>, alors <script type="math/tex">X = X_1 + X_2 + ... + X_n</script> où <script type="math/tex">\forall k, X_k ~ B(p)</script> et ils sont mutullement indépendants. </p>
 <p>有时 loi de Poission 相关的也可以这样子来思考（但能不能这样子证明呢。。？）</p>
-<h2 id="fonction-bijectivite-35">Fonction - bijectivité 通用度：3.5</h2>
-<p>$Id = f\circ g$ $\implies$ $f$ surjective, $g$ injective. </p>
-<p>Si $f$ bijective et $Id = f\circ g$; Alors $g = f^{-1}$:<br>
-$f^{-1}\circ Id = f^{-1}\circ f \circ g$, donc $f^{-1} = g$. </p>
+<h2>Fonction - bijectivité 通用度：3.5</h2>
+<p>
+<script type="math/tex">Id = f\circ g</script>
+<script type="math/tex">\implies</script>
+<script type="math/tex">f</script> surjective, <script type="math/tex">g</script> injective. </p>
+<p>Si <script type="math/tex">f</script> bijective et <script type="math/tex">Id = f\circ g</script>; Alors <script type="math/tex">g = f^{-1}</script>:<br />
+<script type="math/tex">f^{-1}\circ Id = f^{-1}\circ f \circ g</script>, donc <script type="math/tex">f^{-1} = g</script>. </p>
 <ul>
 <li>一些典型的事情可以用这个来做</li>
 </ul>
 <blockquote>
-<p>$I = AB$; Alors $A$ inversible et $A^{-1} = B$:<br>
-$\text{Im}(A)=\R^n$ donc, $\text{rg}(A) = n$, $A$ inversible...<br>
+<p>
+<script type="math/tex">I = AB</script>; Alors <script type="math/tex">A</script> inversible et <script type="math/tex">A^{-1} = B</script>:<br />
+<script type="math/tex">\text{Im}(A)=\R^n</script> donc, <script type="math/tex">\text{rg}(A) = n</script>, <script type="math/tex">A</script> inversible...<br />
 又或者 application linéaire (dimension finie) 也是差不多的思路。</p>
 </blockquote>
-<h2 id="analyse-synthese-5">Analyse - Synthèse 通用度：5</h2>
+<h2>Analyse - Synthèse 通用度：5</h2>
 <p>例子：</p>
 <blockquote>
-<p>$E$ ev et $s \in L(E)$. $s\circ s = Id_E$<br>
-Mq les seules valeurs propores possibles de $s$ sont $1$ et $-1$:<br>
-...<br>
-Soit $x \in E$. Mq $\exist x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm$:<br>
-<strong>Analyse</strong><br>
-Soit $x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm$.<br>
-Alors $s(x) = s(x_+ + x_-) = x_+ - x_-$<br>
-De plus $x = x_+ + x_-$.<br>
-Donc $x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}$.<br>
-<strong>Synthèse</strong><br>
-Mq $x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}$ convient...</p>
+<p>
+<script type="math/tex">E</script> ev et <script type="math/tex">s \in L(E)</script>. <script type="math/tex">s\circ s = Id_E</script>
+<br />
+Mq les seules valeurs propores possibles de <script type="math/tex">s</script> sont <script type="math/tex">1</script> et <script type="math/tex">-1</script>:<br />
+...<br />
+Soit <script type="math/tex">x \in E</script>. Mq <script type="math/tex">\exist x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm</script>:<br />
+<strong>Analyse</strong><br />
+Soit <script type="math/tex">x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm</script>.<br />
+Alors <script type="math/tex">s(x) = s(x_+ + x_-) = x_+ - x_-</script>
+<br />
+De plus <script type="math/tex">x = x_+ + x_-</script>.<br />
+Donc <script type="math/tex">x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}</script>.<br />
+<strong>Synthèse</strong><br />
+Mq <script type="math/tex">x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}</script> convient...</p>
 </blockquote>
 <p>这是很妙的啊。在 existe 那一步，我们想要提供一组解，但是没什么想法。于是我们通过 Analyse 来考虑解的必要形式。虽然说最终过程去掉 Analyse 也是说得通的。</p>
+<h2>sin sous forme exponentielle 通用度：4</h2>
+<p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sin(x) &= {\exp(xi)-\exp(-xi)\over 2i} \\
+\cos(x) &= {\exp(xi)+\exp(-xi)\over 2}
+\end{aligned}
+</script>
+</p>
+<p>例题：</p>
+<blockquote>
+<p>Calculer <script type="math/tex">\int_0^\pi \sin^3</script>
+<br />
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_0^\pi \sin(x)^3dx &= \int_0^\pi ({e^{ix}-e^{-ix}\over 2i})^3dx\\
+&= \int_0^\pi {e^{3ix}-3e^{ix}+3e^{-ix}-e^{-3ix}\over -8i}dx\\
+&= -{1\over 4}\int_0^\pi (sin(3x)-3sin(x))dx\\
+&= {4\over 3}
+\end{aligned}
+</script>
+</p>
+</blockquote>
+<p>这叫做 linéariser。</p>
     </div><!-- /.entry-content -->
 
   </article>

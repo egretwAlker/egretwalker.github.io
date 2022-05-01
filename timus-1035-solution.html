@@ -15,7 +15,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
 
         <!-- To automatically render math in text elements, include the auto-render extension: -->
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
@@ -32,7 +32,9 @@
                   throwOnError : false
                 });
             });
-        </script>
+        </script> -->
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
 
         <meta name="description" content="Euler 是个德文名吗，用德语读起来挺顺口的。 题意：有两种边，请用最少数量的欧拉路径（并且路径上是交错着的正反边）将图上 …" />
 </head>
@@ -68,79 +70,75 @@
 <p>题意：有两种边，请用最少数量的欧拉路径（并且路径上是交错着的正反边）将图上的所有边覆盖。求数量。</p>
 <p>这实在是一道引发人思考的好题。我一开始仍然想要贪心，但是失败了。失败的原因难以用语言表达。但做不出来就是失败了。</p>
 <p>于是考虑别的算法。timus 1441 是一道欧拉路径的模版题。</p>
-<h2 id="_1">对欧拉路径的思考</h2>
-<p>一个联通块中，如果所有边都是偶度数，那么一定存在一条欧拉回路。我们甚至可以线性地构造出来：<br>
+<h2>对欧拉路径的思考</h2>
+<p>一个联通块中，如果所有边都是偶度数，那么一定存在一条欧拉回路。我们甚至可以线性地构造出来：<br />
 从一点开始乱走，走一条边删一条边，最终无路可走的时候，必然停在原点——否则停在的那个点就是个奇数度数的点，contradiction。一直这样走可以得到很多的欧拉回路，它们将所有的边覆盖。它们又一定是联通的，所以我们将联通的欧拉回路合并成一条。</p>
 <p>一个联通块中，奇度数的点个数 n 一定是偶数。n/2 个欧拉路径就可以覆盖所有的边。我们也可以构造（证明）出来：
-首先 n/2 是个下界，毕竟每一条欧拉路径去掉 2 个或 0 个奇度数点。<br>
+首先 n/2 是个下界，毕竟每一条欧拉路径去掉 2 个或 0 个奇度数点。<br />
 于是，按照和之前一样的思路，从一个奇度数点出发，走一条边删一条边，然后我们会停在一个和起点不同的奇度数点。重复——于是我们得到 n/2 条欧拉路径，剩下了一些只有偶度数点的联通块，这些联通块用欧拉回路覆盖后合并到欧拉路径上就好了。</p>
-<h2 id="_2">题解</h2>
+<h2>题解</h2>
 <p>用和之前差不多的思路，先求出一个下界，然后发现这个下界是可以构造出来的。</p>
 <p>但我们不妨先思考一个子命题：如果每个点的正边度数与反边度数相等，那么答案就是联通块的个数。是的，是的，这是对的。因为对于一条欧拉交错路径（这是我骄傲的命名，意思就是符合题目条件的欧拉路径），所有的中途点（非开头和结尾）都“少”了相同数量的正反边，而如果我们随便选择一个点一直走，一定是要么停在出发点，要么停在一个正反边不同数量的点。所以我们只能停在出发点。</p>
-<h3 id="_3">所以对于这题的答案就呼之欲出了</h3>
+<h3>所以对于这题的答案就呼之欲出了</h3>
 <p>一个下界：每一条欧拉路径的效果是让两个点的正反边 diff-- 或者保持所有边的正反边数量相等，于是一个（有至少一条边）联通块内的答案至少是 max(1, 每个点正反边 diff 之和 / 2)。这，通过之前的乱走的思路，是可以达到的。</p>
-<h3 id="_4">这题的代码也许挺重要的</h3>
-<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
-<span class="cp">#include</span><span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
-
-<span class="cp">#define N 210</span>
-
-<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">p</span><span class="p">[</span><span class="n">N</span><span class="o">*</span><span class="n">N</span><span class="p">],</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="o">*</span><span class="n">N</span><span class="p">],</span> <span class="n">ins</span><span class="p">[</span><span class="n">N</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">find</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span><span class="p">(</span><span class="o">~</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]);</span>
-    <span class="p">}</span> <span class="k">else</span>
-        <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">y</span><span class="p">);</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span>
-        <span class="n">p</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
-    <span class="n">memset</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">-1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">p</span><span class="p">));</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="mi">-1</span><span class="p">;</span><span class="n">k</span><span class="o">&lt;=</span><span class="mi">1</span><span class="p">;</span><span class="n">k</span><span class="o">+=</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">char</span> <span class="n">s</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-            <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
-            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\\&#39;</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">merge</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-                    <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="p">;</span>
-                    <span class="n">d</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="p">;</span>
-                <span class="p">}</span>
-                <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;/&#39;</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">merge</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="p">);</span>
-                    <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="p">;</span>
-                    <span class="n">d</span><span class="p">[(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">k</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="o">~</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
-            <span class="n">d</span><span class="p">[</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">abs</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">)])</span> <span class="o">+</span> <span class="n">abs</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-            <span class="n">ins</span><span class="p">[</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span><span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">-1</span> <span class="o">&amp;&amp;</span> <span class="n">ins</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
-            <span class="c1">// printf(&quot;%d %d %d %d\n&quot;, i/(m+1), i%(m+1), d[i], i);</span>
-            <span class="n">ans</span> <span class="o">+=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">?</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
+<h3>这题的代码也许挺重要的</h3>
+<p>```c</p>
+<h1>include<stdio.h></h1>
+<h1>include<stdlib.h></h1>
+<h1>include<string.h></h1>
+<h1>define N 210</h1>
+<p>int n, m;
+int p[N<em>N], d[N</em>N], ins[N*N];</p>
+<p>int find(int x) {
+    if(~p[x]) {
+        return p[x] = find(p[x]);
+    } else
+        return x;
+}</p>
+<p>void merge(int x, int y) {
+    x = find(x);
+    y = find(y);
+    if(x != y)
+        p[x] = y;
+}</p>
+<p>int main(void) {
+    scanf("%d%d", &amp;n, &amp;m);
+    memset(p, -1, sizeof(p));
+    for(int k=-1;k&lt;=1;k+=2) {
+        for(int i=0;i&lt;n;++i) {
+            char s[N];
+            scanf("%s", s);
+            for(int j=0;j&lt;m;++j) {
+                if(s[j] == '\' || s[j] == 'X') {
+                    merge(i<em>(m+1)+j, (i+1)</em>(m+1)+j+1);
+                    d[i<em>(m+1)+j] += k;
+                    d[(i+1)</em>(m+1)+j+1] += k;
+                }
+                if(s[j] == '/' || s[j] == 'X') {
+                    merge(i<em>(m+1)+j+1, (i+1)</em>(m+1)+j);
+                    d[i<em>(m+1)+j+1] += k;
+                    d[(i+1)</em>(m+1)+j] += k;
+                }
+            }
+        }
+    }
+    int ans = 0;
+    for(int i=0;i&lt;(n+1)<em>(m+1);++i) {
+        if(~p[i]) {
+            d[find(i)] = abs(d[find(i)]) + abs(d[i]);
+            ins[find(i)] = 1;
+        }
+    }
+    for(int i=0;i&lt;(n+1)</em>(m+1);++i) {
+        if(p[i] == -1 &amp;&amp; ins[i]) {
+            // printf("%d %d %d %d\n", i/(m+1), i%(m+1), d[i], i);
+            ans += d[i]?d[i]/2:1;
+        }
+    }
+    printf("%d", ans);
+    return 0;
+}
+```</p>
     </div><!-- /.entry-content -->
 
   </article>

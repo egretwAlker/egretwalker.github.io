@@ -15,7 +15,7 @@
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
 
         <!-- To automatically render math in text elements, include the auto-render extension: -->
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
@@ -32,9 +32,11 @@
                   throwOnError : false
                 });
             });
-        </script>
+        </script> -->
 
-        <meta name="description" content="（记住了，一个 $\deg P \le 3$ 的多项式有 4 项！） Points de Vue Système Linéaire Représentation Matricielle Espace Vectoriel Pour obtenir Img et ker..." />
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+
+        <meta name="description" content="（记住了，一个 \deg P \le 3 的多项式有 4 项！） Points de Vue Système Linéaire Représentation Matricielle Espace Vectoriel Pour obtenir Img et ker..." />
 </head>
 
 <body id="index" class="home">
@@ -64,65 +66,77 @@
         </address>
 <p>In <a href="https://egretwalker.github.io/category/misc.html">misc</a>.</p>
 
-</footer><!-- /.post-info -->      <p>（记住了，一个 $\deg P \le 3$ 的多项式有 4 项！）</p>
-<h2 id="points-de-vue">Points de Vue</h2>
+</footer><!-- /.post-info -->      <p>（记住了，一个 <script type="math/tex">\deg P \le 3</script> 的多项式有 4 项！）</p>
+<h2>Points de Vue</h2>
 <ul>
 <li>Système Linéaire</li>
 <li>Représentation Matricielle</li>
 <li>Espace Vectoriel</li>
 </ul>
-<h3 id="pour-obtenir-img-et-ker-explicitement">Pour obtenir Img et ker explicitement...</h3>
-<h4 id="methode">Méthode</h4>
-<p>$A \in M_{n, m}(𝕂)$</p>
+<h3>Pour obtenir Img et ker explicitement...</h3>
+<h4>Méthode</h4>
+<p>
+<script type="math/tex">A \in M_{n, m}(𝕂)</script>
+</p>
 <p>Pour obtenir l'image et le noyau dans un pivot de Gauss: </p>
-<p>On fait le pivot de Gauss sur les lignes, on obtient le $\text{rg}(A)$ $\dim \ker A$. </p>
+<p>On fait le pivot de Gauss sur les lignes, on obtient le <script type="math/tex">\text{rg}(A)</script>
+<script type="math/tex">\dim \ker A</script>. </p>
 <ul>
 <li>
-<p>En posant repectivement les variables libres 1, et réduisant les autres terms, on obtient $\ker A$</p>
+<p>En posant repectivement les variables libres 1, et réduisant les autres terms, on obtient <script type="math/tex">\ker A</script>
+</p>
 </li>
 <li>
-<p>En choisissant les colonnes de pivot dans A, on obtient $\text{Img} A$</p>
+<p>En choisissant les colonnes de pivot dans A, on obtient <script type="math/tex">\text{Img} A</script>
+</p>
 </li>
 </ul>
-<h4 id="exemple">Exemple</h4>
-<p>$$
+<h4>Exemple</h4>
+<p>
+<script type="math/tex; mode=display">
 \begin{pmatrix}
-1 &amp; -1 &amp; 1 &amp; 1 \\
-5 &amp; 2 &amp; -1 &amp; -3 \\
--3 &amp; -4 &amp; 3 &amp; 2 \\
-6 &amp; 1 &amp; 0 &amp; -2
+1 & -1 & 1 & 1\\
+5 & 2 & -1 & -3\\
+-3 & -4 & 3 & 2 \\
+6 & 1 & 0 & -2
 \end{pmatrix}
 \rightarrow
 \begin{pmatrix}
-1 &amp; -1 &amp; 1 &amp; 1 \\
-0 &amp; 7 &amp; -6 &amp; -8 \\
-0 &amp; 0 &amp; 0 &amp; -3 \\
-0 &amp; 0 &amp; 0 &amp; 0
+1 & -1 & 1 & 1 \\
+0 & 7 & -6 & -8 \\
+0 & 0 & 0 & -3 \\
+0 & 0 & 0 & 0
 \end{pmatrix}
-$$</p>
+</script>
+</p>
 <!-- Why \\\\ you might ask! Oh the stupid python-markdown. I will fix it one day (seems a little difficult for me though) -->
 
-<p>$\text{Img} A = \text{Vect}(C1, C2, C3)$<br>
-$\ker A = (-1, 6, 7, 0)$</p>
+<p>
+<script type="math/tex">\text{Img} A = \text{Vect}(C1, C2, C3)</script>
+<br />
+<script type="math/tex">\ker A = (-1, 6, 7, 0)</script>
+</p>
 <ul>
 <li>Mais on peut également résoudre cette question par système linéaire. </li>
 </ul>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
 \begin{pmatrix}
-1 &amp; -1 &amp; 1 &amp; 1  &amp; a\\
-5 &amp; 2 &amp; -1 &amp; -3 &amp; b\\
--3 &amp; -4 &amp; 3 &amp; 2 &amp; c\\
-6 &amp; 1 &amp; 0 &amp; -2  &amp; d
+1 & -1 & 1 & 1  & a\\
+5 & 2 & -1 & -3 & b\\
+-3 & -4 & 3 & 2 & c\\
+6 & 1 & 0 & -2  & d
 \end{pmatrix}
 \rightarrow
 \begin{pmatrix}
-1 &amp; -1 &amp; 1 &amp; 1  &amp; a \\
-0 &amp; 7 &amp; -6 &amp; -8 &amp; b-5a \\
-0 &amp; 0 &amp; 0 &amp; -3  &amp; -2a+b+c\\
-0 &amp; 0 &amp; 0 &amp; 0   &amp; -a-b+d
+1 & -1 & 1 & 1  & a\\
+0 & 7 & -6 & -8 & b-5a\\
+0 & 0 & 0 & -3  & -2a+b+c\\
+0 & 0 & 0 & 0   & -a-b+d
 \end{pmatrix}
-$$</p>
-<p>Donc $\text{Img}A = {(a, b, c, d)|-a-b+d = 0}$. Cela est encore une fois un noyau. Alors on pose respectivement b=1, c=1, d=1...</p>
+</script>
+</p>
+<p>Donc <script type="math/tex">\text{Img}A = \{(a, b, c, d)|-a-b+d = 0\}</script>. Cela est encore une fois un noyau. Alors on pose respectivement b=1, c=1, d=1...</p>
     </div><!-- /.entry-content -->
 
   </article>
