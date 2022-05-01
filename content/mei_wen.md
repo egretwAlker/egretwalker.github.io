@@ -24,6 +24,8 @@ $$
 
 $\int$ 完全可以被替换成 $\sum$。只可惜只能在实数域下。但这还是一个超级漂亮的证明。对我来说。
 
+**Remarque**: 当 $f,g$ continues 的是否，取等条件等价于两函数 proportionnelles。
+
 # Tricks Subset
 
 ## L'extrêmité en valeur absolue 通用度：4
@@ -47,11 +49,12 @@ Donc ${\mathring E}^c = \bigcap_i {O_i}^c = \bar {E^c}$
 - 稍微有同样感觉的一个题：
 
 > $p : E \rightarrow F$ une projection. Alors $E = \text{Im}(p)\bigoplus\ker(p)$.  
+> Mq $\ker(p) = \text{Im}(Id-f)$:  
 > $\ker(p) = \{x_2 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \{x - x_1 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \text{Im}(Id-f)$
 
 ## Décomposition - loi binomiale 通用度：3
 
-Si $X ~ B(n, p)$, alors $X = X_1 + X_2 + ... + X_n$ où $\forall k, X_k ~ B(p)$ et ils sont mutullement indépandants. 
+Si $X ~ B(n, p)$, alors $X = X_1 + X_2 + ... + X_n$ où $\forall k, X_k ~ B(p)$ et ils sont mutullement indépendants. 
 
 有时 loi de Poission 相关的也可以这样子来思考（但能不能这样子证明呢。。？）
 

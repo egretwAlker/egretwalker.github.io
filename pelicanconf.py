@@ -1,3 +1,6 @@
+from pickle import MARK
+
+
 AUTHOR = 'egretwalker'
 SITENAME = 'loghj'
 SITEURL = ''
@@ -56,3 +59,12 @@ MARKDOWN = {
 
 READERS = {'html': None}
 TEMPLATE_PAGES = {'pages/dfts.html': 'dfts.html'}
+
+MARKDOWN = {
+    'extensions': ['mdx_math'],
+    'extension_configs': {
+        'mdx_math': {
+            'enable_dollar_delimiter': True
+        }
+    },
+}
