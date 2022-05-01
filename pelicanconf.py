@@ -42,6 +42,7 @@ STATIC_PATHS = [ 'images',
 EXTRA_PATH_METADATA = {'extra/favicon.ico': {'path': 'favicon.ico'},}
 
 MARKDOWN = {
+    'extensions': ['mdx_math'],
     'extension_configs': {
         # Needed for code syntax highlighting
         'markdown.extensions.codehilite': {
@@ -53,18 +54,12 @@ MARKDOWN = {
         'markdown.extensions.toc': {
             'title': 'Table of Contents',
         },
+        'mdx_math': {
+            'enable_dollar_delimiter': True
+        }
     },
     'output_format': 'html5',
 }
 
 READERS = {'html': None}
 TEMPLATE_PAGES = {'pages/dfts.html': 'dfts.html'}
-
-MARKDOWN = {
-    'extensions': ['mdx_math'],
-    'extension_configs': {
-        'mdx_math': {
-            'enable_dollar_delimiter': True
-        }
-    },
-}
