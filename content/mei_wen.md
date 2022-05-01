@@ -89,3 +89,25 @@ $f^{-1}\circ Id = f^{-1}\circ f \circ g$, donc $f^{-1} = g$.
 
 这是很妙的啊。在 existe 那一步，我们想要提供一组解，但是没什么想法。于是我们通过 Analyse 来考虑解的必要形式。虽然说最终过程去掉 Analyse 也是说得通的。
 
+## sin sous forme exponentielle 通用度：4
+
+$$
+\begin{aligned}
+\sin(x) &= {\exp(xi)-\exp(-xi)\over 2i} \\
+\cos(x) &= {\exp(xi)+\exp(-xi)\over 2}
+\end{aligned}
+$$
+
+例题：
+
+> Calculer $\int_0^\pi \sin^3$  
+> $$
+> \begin{aligned}
+> \int_0^\pi \sin(x)^3dx &= \int_0^\pi ({e^{ix}-e^{-ix}\over 2i})^3dx\\
+> &= \int_0^\pi {e^{3ix}-3e^{ix}+3e^{-ix}-e^{-3ix}\over -8i}dx\\
+> &= -{1\over 4}\int_0^\pi (sin(3x)-3sin(x))dx\\
+> &= {4\over 3}
+> \end{aligned}
+> $$ 
+
+这叫做 linéariser。
