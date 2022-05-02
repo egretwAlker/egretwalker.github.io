@@ -6,7 +6,7 @@ Status: draft
 
 [LEAN: 如果...我将能够解决哥德巴赫猜想：不（难）可（以）计算的函数](https://xenaproject.wordpress.com/2019/06/11/the-inverse-of-a-bijection/)
 
-# 一些美妙的证明
+# 一些美妙的证明（目前全是关于基本的不等式的简洁证明）
 
 ## L'inégalité de Cauchy-Schwarz
 
@@ -27,6 +27,35 @@ $$
 $\int$ 完全可以被替换成 $\sum$。只可惜只能在实数域下。但这还是一个超级漂亮的证明。对我来说。
 
 **Remarque**: 当 $f,g$ continues 的是否，取等条件等价于两函数 proportionnelles。
+
+## Inégalité par la formule de Taylor avec reste intégral
+
+### Type 1 (普通)
+
+$$
+\text{Soit } x \in ℝ,\\
+\begin{aligned}
+\ln(1+x) &= x + \int_0^x (x-t){1\over 1+x}dx\\
+&\le x
+\end{aligned}
+$$
+
+这适合那些积分 signe 一定的。这样的结论在 ℝ 下是一致的。
+
+### Type 2 (Je suis épaté | 我好傻)
+
+$$
+\text{Soit } x \in ℝ^+,\\
+\begin{aligned}
+\sin(x) &= x - {x^3\over 6} + \int_0^x{(x-t)^4\over 4!}cos(x)dx\\
+&\le x - {x^3\over 6} + \int_0^x{(x-t)^4\over 4!}1dx\\
+&= x - {x^3\over 6} + {x^5\over 5!}\\
+\end{aligned}
+$$
+
+De même, $\forall x \in ℝ^+, \sin(x) \ge x - {x^3\over 6} - {x^5\over 5!}$
+
+这是很妙啊，不过要注意 x 的符号。
 
 # Tricks Subset
 
