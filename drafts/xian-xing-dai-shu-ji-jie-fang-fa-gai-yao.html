@@ -36,7 +36,7 @@
 
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
 
-        <meta name="description" content="（记住了，一个 \deg P \le 3 的多项式有 4 项！） Points de Vue Système Linéaire Représentation Matricielle Espace Vectoriel Pour obtenir Img et ker..." />
+        <meta name="description" content="Table of Contents Points de Vue Pour obtenir Img et ker explicitement (dans un pivot de Gauss!) Exemple Pour calculer E \cap F ou E + F misc..." />
 </head>
 
 <body id="index" class="home">
@@ -66,15 +66,26 @@
         </address>
 <p>In <a href="https://egretwalker.github.io/category/misc.html">misc</a>.</p>
 
-</footer><!-- /.post-info -->      <p>（记住了，一个 <script type="math/tex">\deg P \le 3</script> 的多项式有 4 项！）</p>
+</footer><!-- /.post-info -->      <div class="toc"><span class="toctitle">Table of Contents</span><ul>
+<li><a href="#points-de-vue">Points de Vue</a><ul>
+<li><a href="#pour-obtenir-img-et-ker-explicitement-dans-un-pivot-de-gauss">Pour obtenir Img et ker explicitement (dans un pivot de Gauss!)</a><ul>
+<li><a href="#exemple">Exemple</a></li>
+</ul>
+</li>
+<li><a href="#pour-calculer-e-cap-f-ou-e-f">Pour calculer E \cap F ou E + F</a></li>
+<li><a href="#misc">misc</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p><del>（记住了，一个 <script type="math/tex">\deg P \le 3</script> 的多项式有 4 项！）</del></p>
 <h2 id="points-de-vue">Points de Vue</h2>
 <ul>
 <li>Système Linéaire</li>
 <li>Représentation Matricielle</li>
 <li>Espace Vectoriel</li>
 </ul>
-<h3 id="pour-obtenir-img-et-ker-explicitement">Pour obtenir Img et ker explicitement...</h3>
-<h4 id="methode">Méthode</h4>
+<h3 id="pour-obtenir-img-et-ker-explicitement-dans-un-pivot-de-gauss">Pour obtenir Img et ker explicitement (dans un pivot de Gauss!)</h3>
 <p>
 <script type="math/tex">A \in M_{n, m}(𝕂)</script>
 </p>
@@ -83,7 +94,7 @@
 <script type="math/tex">\dim \ker A</script>. </p>
 <ul>
 <li>
-<p>En posant repectivement les variables libres 1, et réduisant les autres terms, on obtient <script type="math/tex">\ker A</script>
+<p>En posant repectivement les variables libres 1 (ou un autre valeur plus maline mais non-nulle), et réduisant les autres terms, on obtient <script type="math/tex">\ker A</script>
 </p>
 </li>
 <li>
@@ -109,8 +120,6 @@
 \end{pmatrix}
 </script>
 </p>
-<!-- Why \\\\ you might ask! Oh the stupid python-markdown. I will fix it one day (seems a little difficult for me though) -->
-
 <p>
 <script type="math/tex">\text{Img} A = \text{Vect}(C1, C2, C3)</script>
 <br>
@@ -122,21 +131,114 @@
 <p>
 <script type="math/tex; mode=display">
 \begin{pmatrix}
-1 & -1 & 1 & 1  & a\\
-5 & 2 & -1 & -3 & b\\
--3 & -4 & 3 & 2 & c\\
-6 & 1 & 0 & -2  & d
+1 & -1 & 1 & 1  &\bigm| & a\\
+5 & 2 & -1 & -3 &\bigm| & b\\
+-3 & -4 & 3 & 2 &\bigm| & c\\
+6 & 1 & 0 & -2  &\bigm| & d
 \end{pmatrix}
 \rightarrow
 \begin{pmatrix}
-1 & -1 & 1 & 1  & a\\
-0 & 7 & -6 & -8 & b-5a\\
-0 & 0 & 0 & -3  & -2a+b+c\\
-0 & 0 & 0 & 0   & -a-b+d
+1 & -1 & 1 & 1  &\bigm| & a\\
+0 & 7 & -6 & -8 &\bigm| & b-5a\\
+0 & 0 & 0 & -3  &\bigm| & -2a+b+c\\
+0 & 0 & 0 & 0   &\bigm| & -a-b+d
 \end{pmatrix}
 </script>
 </p>
 <p>Donc <script type="math/tex">\text{Img}A = \{(a, b, c, d)|-a-b+d = 0\}</script>. Cela est encore une fois un noyau. Alors on pose respectivement b=1, c=1, d=1...</p>
+<h3 id="pour-calculer-e-cap-f-ou-e-f">Pour calculer <script type="math/tex">E \cap F</script> ou <script type="math/tex">E + F</script>
+</h3>
+<p>首先，<script type="math/tex">E</script> 与 <script type="math/tex">F</script> 是如何被表示出来的呢？</p>
+<ol>
+<li>
+<script type="math/tex">\text{Im}(f)</script> 的形式（<script type="math/tex">\text{Vect}(u_1, ..., u_n)</script>）；</li>
+<li>
+<script type="math/tex">\ker(f)</script> 的形式；</li>
+<li>système d'équations 的形式；</li>
+</ol>
+<p>2 与 3 没有什么区别。所以我们只用讨论 1, 2 的情况就好了。</p>
+<p>注意到 1 求 <script type="math/tex">+</script> 比较容易，2 求 <script type="math/tex">\cap</script> 比较容易，我们考虑要如何进行 1 与 2 之间的转换。</p>
+<blockquote>
+<p>1 求 <script type="math/tex">+</script>，将 <script type="math/tex">\text{Vect}</script> 中的元素放在一起就好了。<br>
+2 求 <script type="math/tex">\cap</script>，要么将两个矩阵上下叠在一起，要么将 systèmes 联立，没有什么本质区别，但叠矩阵显然更有趣。</p>
+</blockquote>
+<p><strong>1 -&gt; 2</strong></p>
+<p>可以用之前提到的方法：</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+1 & -1 & 1 & 1  &\bigm| & a\\
+5 & 2 & -1 & -3 &\bigm| & b\\
+-3 & -4 & 3 & 2 &\bigm| & c\\
+6 & 1 & 0 & -2  &\bigm| & d
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+1 & -1 & 1 & 1  &\bigm| & a\\
+0 & 7 & -6 & -8 &\bigm| & b-5a\\
+0 & 0 & 0 & -3  &\bigm| & -2a+b+c\\
+0 & 0 & 0 & 0   &\bigm| & -a-b+d
+\end{pmatrix}
+</script>
+</p>
+<p>那么关心不存在 pivot 的行（也就是全 0 的行）:</p>
+<p>
+<script type="math/tex; mode=display">
+\ker
+\begin{pmatrix}
+-1 & -1 & 0 & 1
+\end{pmatrix}
+=\text{l'image}
+</script>
+</p>
+<p>矩阵狂热分子也可以将上述过程写成这样：</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+1 & -1 & 1 & 1  &\bigm| & 1 & 0 & 0 & 0\\
+5 & 2 & -1 & -3 &\bigm| & 0 & 1 & 0 & 0\\
+-3 & -4 & 3 & 2 &\bigm| & 0 & 0 & 1 & 0\\
+6 & 1 & 0 & -2  &\bigm| & 0 & 0 & 0 & 1
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+1 & -1 & 1 & 1  &\bigm| & 1 & 0 & 0 & 0\\
+0 & 7 & -6 & -8 &\bigm| & -5 & 1 & 0 & 0\\
+0 & 0 & 0 & -3  &\bigm| & -2 & 1 & 1 & 0\\
+0 & 0 & 0 & 0   &\bigm| & -1 & -1 & 0 & 1
+\end{pmatrix}
+</script>
+</p>
+<p>然后直接取得右下的子矩阵。</p>
+<p><strong>2 -&gt; 1</strong></p>
+<p>想必大家已经很熟悉了：</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{pmatrix}
+1 & -1 & 1 & 1\\
+5 & 2 & -1 & -3\\
+-3 & -4 & 3 & 2\\
+6 & 1 & 0 & -2
+\end{pmatrix}
+\rightarrow
+\begin{pmatrix}
+1 & -1 & 1 & 1\\
+0 & 7 & -6 & -8\\
+0 & 0 & 0 & -3\\
+0 & 0 & 0 & 0
+\end{pmatrix}
+</script>
+</p>
+<p>然后将遍历每个没有 pivot 的列，分别将其设为 1（或者其他好的非零数） 将其他自由的元设为 0，得到一组 base。在上面这个例子中</p>
+<p>
+<script type="math/tex; mode=display">
+\text{le noyau} = \text{Vect}\begin{pmatrix}-13 \\ -6 \\ 7 \\ 0\end{pmatrix}
+</script>
+</p>
+<h3 id="misc">misc</h3>
+<ul>
+<li>在用 tricky 方法做 diagonalisation 的时候可以先瞧瞧 noyau 也就是 valeur propre = 0 的 espace propre。</li>
+</ul>
     </div><!-- /.entry-content -->
 
   </article>

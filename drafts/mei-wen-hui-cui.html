@@ -36,7 +36,7 @@
 
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
 
-        <meta name="description" content="Table of Contents 一些美妙的证明 L'inégalité de Cauchy-Schwarz Tricks Subset L'extrêmité en valeur absolue 通用度：4 L'extrêmité des ensembles 通用度：2..." />
+        <meta name="description" content="Table of Contents 一些美妙的证明（目前全是关于基本的不等式的简洁证明） L'inégalité de Cauchy-Schwarz Inégalité par la formule de Taylor avec reste intégral Type 1 (普通) Type..." />
 </head>
 
 <body id="index" class="home">
@@ -67,8 +67,13 @@
 <p>In <a href="https://egretwalker.github.io/category/misc.html">misc</a>.</p>
 
 </footer><!-- /.post-info -->      <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#_1">一些美妙的证明</a><ul>
+<li><a href="#_1">一些美妙的证明（目前全是关于基本的不等式的简洁证明）</a><ul>
 <li><a href="#linegalite-de-cauchy-schwarz">L'inégalité de Cauchy-Schwarz</a></li>
+<li><a href="#inegalite-par-la-formule-de-taylor-avec-reste-integral">Inégalité par la formule de Taylor avec reste intégral</a><ul>
+<li><a href="#type-1">Type 1 (普通)</a></li>
+<li><a href="#type-2-je-suis-epate">Type 2 (Je suis épaté | 我好傻)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#tricks-subset">Tricks Subset</a><ul>
@@ -83,7 +88,7 @@
 </ul>
 </div>
 <p><a href="https://xenaproject.wordpress.com/2019/06/11/the-inverse-of-a-bijection/">LEAN: 如果...我将能够解决哥德巴赫猜想：不（难）可（以）计算的函数</a></p>
-<h1 id="_1">一些美妙的证明</h1>
+<h1 id="_1">一些美妙的证明（目前全是关于基本的不等式的简洁证明）</h1>
 <h2 id="linegalite-de-cauchy-schwarz">L'inégalité de Cauchy-Schwarz</h2>
 <p>
 <script type="math/tex; mode=display">
@@ -104,6 +109,32 @@
 <p>
 <script type="math/tex">\int</script> 完全可以被替换成 <script type="math/tex">\sum</script>。只可惜只能在实数域下。但这还是一个超级漂亮的证明。对我来说。</p>
 <p><strong>Remarque</strong>: 当 <script type="math/tex">f,g</script> continues 的是否，取等条件等价于两函数 proportionnelles。</p>
+<h2 id="inegalite-par-la-formule-de-taylor-avec-reste-integral">Inégalité par la formule de Taylor avec reste intégral</h2>
+<h3 id="type-1">Type 1 (普通)</h3>
+<p>
+<script type="math/tex; mode=display">
+\text{Soit } x \in ℝ,\\
+\begin{aligned}
+\ln(1+x) &= x + \int_0^x (x-t){1\over 1+x}dx\\
+&\le x
+\end{aligned}
+</script>
+</p>
+<p>这适合那些积分 signe 一定的。这样的结论在 ℝ 下是一致的。</p>
+<h3 id="type-2-je-suis-epate">Type 2 (Je suis épaté | 我好傻)</h3>
+<p>
+<script type="math/tex; mode=display">
+\text{Soit } x \in ℝ^+,\\
+\begin{aligned}
+\sin(x) &= x - {x^3\over 6} + \int_0^x{(x-t)^4\over 4!}cos(x)dx\\
+&\le x - {x^3\over 6} + \int_0^x{(x-t)^4\over 4!}1dx\\
+&= x - {x^3\over 6} + {x^5\over 5!}\\
+\end{aligned}
+</script>
+</p>
+<p>De même, <script type="math/tex">\forall x \in ℝ^+, \sin(x) \ge x - {x^3\over 6} - {x^5\over 5!}</script>
+</p>
+<p>这是很妙啊，不过要注意 x 的符号。</p>
 <h1 id="tricks-subset">Tricks Subset</h1>
 <h2 id="lextremite-en-valeur-absolue-4">L'extrêmité en valeur absolue 通用度：4</h2>
 <p>
