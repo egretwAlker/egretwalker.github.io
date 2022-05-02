@@ -2,6 +2,8 @@ Title: Timus 1035 Solution
 Date: 2022-04-21
 Category: Timus
 
+[题面](https://timus.online/problem.aspx?space=1&num=1035)
+
 Euler 是个德文名吗，用德语读起来挺顺口的。
 
 题意：有两种边，请用最少数量的欧拉路径（并且路径上是交错着的正反边）将图上的所有边覆盖。求数量。
