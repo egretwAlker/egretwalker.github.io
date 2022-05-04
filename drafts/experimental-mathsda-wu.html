@@ -36,7 +36,7 @@
 
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
 
-        <meta name="description" content="Intro 今天在 TD 里遇到了一道题： X \sim ℬ(n_1, p), Y \sim ℬ(n_2, p) v.a. indépendantes. Déterminer la loi de X+Y 在 le corrigé 里如此写道： Une manière intelligente..." />
+        <meta name="description" content="Intro 今天在 TD 里遇到了一道题： X \sim \mathcal{B}(n_1, p), Y \sim \mathcal{B}(n_2, p) v.a. indépendantes. Déterminer la loi de X+Y 在 le corrigé 里如此写道： Une..." />
 </head>
 
 <body id="index" class="home">
@@ -70,19 +70,19 @@
 <p>今天在 TD 里遇到了一道题：</p>
 <blockquote>
 <p>
-<script type="math/tex">X \sim ℬ(n_1, p), Y \sim ℬ(n_2, p)</script> v.a. indépendantes.<br>
+<script type="math/tex">X \sim \mathcal{B}(n_1, p), Y \sim \mathcal{B}(n_2, p)</script> v.a. indépendantes.<br>
 Déterminer la loi de <script type="math/tex">X+Y</script>
 </p>
 </blockquote>
 <p>在 le corrigé 里如此写道：</p>
 <blockquote>
 <p>Une manière intelligente de procéder est la suivante:<br>
-Considéron <script type="math/tex">n_1 + n_2</script> variables aléatoires de loi <script type="math/tex">ℬ(p)</script> indépendantes, <script type="math/tex">U_1, \dots, U_{n_1}, V_1,\dots,V_{n_2}</script>.<br>
+Considéron <script type="math/tex">n_1 + n_2</script> variables aléatoires de loi <script type="math/tex">\mathcal{B}(p)</script> indépendantes, <script type="math/tex">U_1, \dots, U_{n_1}, V_1,\dots,V_{n_2}</script>.<br>
 Puisqu'on ne s'intéresse qu'aux lois, on peut remplacer <script type="math/tex">X</script> par <script type="math/tex">U_1+\dots+U_{n_1}</script>, <script type="math/tex">Y</script> par <script type="math/tex">V_1+\dots+V_{n_2}</script>.<br>
-Comme toutes ces variables sont indépendantes, <script type="math/tex">X_1 + X_2</script> a alors même loi que <script type="math/tex">U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}</script>, c'est-à-dire <script type="math/tex">ℬ(n_1+n_2, p)</script>. </p>
+Comme toutes ces variables sont indépendantes, <script type="math/tex">X_1 + X_2</script> a alors même loi que <script type="math/tex">U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}</script>, c'est-à-dire <script type="math/tex">\mathcal{B}(n_1+n_2, p)</script>. </p>
 </blockquote>
 <h2 id="section-1">Section 1: 讲好一个故事</h2>
-<p>我并不以为 le corrigé 是正确的。首先一个 <script type="math/tex">X \sim ℬ(n, p)</script> 不一定就能被写成 <script type="math/tex">X = U_1+\dots+U_n</script> 的形式。其次，就算 <script type="math/tex">X~et~Y</script> indépendantes, <script type="math/tex">U_1,\dots,U_{n_1}</script> indépendantes, <script type="math/tex">V_1,\dots,V_{n_2}</script> indépendantes. <script type="math/tex">U_1,\dots,U_{n_1},V_1,\dots,V_{n_2}</script> 也并不一定 indépendantes. </p>
+<p>我并不以为 le corrigé 是正确的。首先一个 <script type="math/tex">X \sim \mathcal{B}(n, p)</script> 不一定就能被写成 <script type="math/tex">X = U_1+\dots+U_n</script> 的形式。其次，就算 <script type="math/tex">X~et~Y</script> indépendantes, <script type="math/tex">U_1,\dots,U_{n_1}</script> indépendantes, <script type="math/tex">V_1,\dots,V_{n_2}</script> indépendantes. <script type="math/tex">U_1,\dots,U_{n_1},V_1,\dots,V_{n_2}</script> 也并不一定 indépendantes. </p>
 <p>所以 le corrigé 并不正确。</p>
 <p>于是我们这样做：</p>
 <p>
@@ -97,7 +97,7 @@ Comme toutes ces variables sont indépendantes, <script type="math/tex">X_1 + X_
 \end{aligned}
 </script>
 </p>
-<p>于是有 <script type="math/tex">X+Y\sim ℬ(n_1+n_2, p)</script>. </p>
+<p>于是有 <script type="math/tex">X+Y\sim \mathcal{B}(n_1+n_2, p)</script>. </p>
 <p>我们突然发现，其实我们根本不在乎 <script type="math/tex">\Omega</script> 是什么样的。</p>
 <h2 id="section-2">Section 2: 点题</h2>
 <p>由 Section 1，我们想要证明的不过是：</p>
@@ -107,15 +107,15 @@ Comme toutes ces variables sont indépendantes, <script type="math/tex">X_1 + X_
 </script>
 </p>
 <p>对此，我们对 le corrigé 中提到的那样的变量进行“实验”：</p>
-<p>On obtient <script type="math/tex">U_1,\dots,U_{n_1},V_1,\dots,V_{n_2} \sim ℬ(p)</script> indépendantes, </p>
+<p>On obtient <script type="math/tex">U_1,\dots,U_{n_1},V_1,\dots,V_{n_2} \sim \mathcal{B}(p)</script> indépendantes, </p>
 <p>On pose <script type="math/tex">X' = U_1+\dots+U_{n_1}, Y' = V_1+\dots+V_{n_2}</script>, alors on a: </p>
 <ol>
 <li>
 <script type="math/tex">X', Y'</script> indépendantes; </li>
 <li>
-<script type="math/tex">X'\sim ℬ(n_1, p), Y'\sim ℬ(n_2, p)</script>;</li>
+<script type="math/tex">X'\sim \mathcal{B}(n_1, p), Y'\sim \mathcal{B}(n_2, p)</script>;</li>
 <li>
-<script type="math/tex">X'+Y' = U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}\sim ℬ(n_1+n_2,p)</script>;</li>
+<script type="math/tex">X'+Y' = U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}\sim \mathcal{B}(n_1+n_2,p)</script>;</li>
 </ol>
 <p>Par conséquent:</p>
 <p>Soit <script type="math/tex">m\in\llbracket0, n_1+n_2\rrbracket</script>,</p>
@@ -123,7 +123,7 @@ Comme toutes ces variables sont indépendantes, <script type="math/tex">X_1 + X_
 Par 3. <script type="math/tex">ℙ(X'+Y'=m)=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}</script>.<br>
 Donc, <script type="math/tex">\sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k}=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}.</script>.<br>
 Donc, <script type="math/tex">ℙ(X+Y=m)=\sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k}=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}</script>.</p>
-<p>Donc, <script type="math/tex">X+Y\sim ℬ(n_1+n_2,p)</script>
+<p>Donc, <script type="math/tex">X+Y\sim \mathcal{B}(n_1+n_2,p)</script>
 </p>
 <p>也许，le corrigé 还是有一点擦边球的道理的。</p>
 <h2 id="section-3-reread">Section 3: Reread</h2>
