@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1.0">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>Experimental Maths（大雾）</title>
+        <link rel="stylesheet" href="https://egretwalker.github.io/theme/css/main.css" />
+        <link href="https://egretwalker.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="loghj Atom Feed" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+        <!-- The loading of KaTeX is deferred to speed up page rendering -->
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+        <!-- To automatically render math in text elements, include the auto-render extension: -->
+        <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                  // customised options
+                  // • auto-render specific keys, e.g.:
+                  delimiters: [
+                      {left: '$$', right: '$$', display: true},
+                      {left: '$', right: '$', display: false},
+                      {left: '\\(', right: '\\)', display: false},
+                      {left: '\\[', right: '\\]', display: true}
+                  ],
+                  // • rendering keys, e.g.:
+                  throwOnError : false
+                });
+            });
+        </script> -->
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+
+        <meta name="description" content="Intro 今天在 TD 里遇到了一道题： X \sim ℬ(n_1, p), Y \sim ℬ(n_2, p) v.a. indépendantes. Déterminer la loi de X+Y 在 le corrigé 里如此写道： Une manière intelligente..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://egretwalker.github.io/">loghj</a></h1>
+                <nav><ul>
+                    <li><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
+                    <li><a href="https://egretwalker.github.io/category/timus.html">Timus</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://egretwalker.github.io/drafts/experimental-mathsda-wu.html" rel="bookmark"
+           title="Permalink to Experimental Maths（大雾）">Experimental Maths（大雾）</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2022-05-03T00:00:00+02:00">
+                Published: Tue 03 May 2022
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://egretwalker.github.io/author/egretwalker.html">egretwalker</a>
+        </address>
+<p>In <a href="https://egretwalker.github.io/category/maths.html">Maths</a>.</p>
+
+</footer><!-- /.post-info -->      <h2 id="intro">Intro</h2>
+<p>今天在 TD 里遇到了一道题：</p>
+<blockquote>
+<p>
+<script type="math/tex">X \sim ℬ(n_1, p), Y \sim ℬ(n_2, p)</script> v.a. indépendantes.<br>
+Déterminer la loi de <script type="math/tex">X+Y</script>
+</p>
+</blockquote>
+<p>在 le corrigé 里如此写道：</p>
+<blockquote>
+<p>Une manière intelligente de procéder est la suivante:<br>
+Considéron <script type="math/tex">n_1 + n_2</script> variables aléatoires de loi <script type="math/tex">ℬ(p)</script> indépendantes, <script type="math/tex">U_1, \dots, U_{n_1}, V_1,\dots,V_{n_2}</script>.<br>
+Puisqu'on ne s'intéresse qu'aux lois, on peut remplacer <script type="math/tex">X</script> par <script type="math/tex">U_1+\dots+U_{n_1}</script>, <script type="math/tex">Y</script> par <script type="math/tex">V_1+\dots+V_{n_2}</script>.<br>
+Comme toutes ces variables sont indépendantes, <script type="math/tex">X_1 + X_2</script> a alors même loi que <script type="math/tex">U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}</script>, c'est-à-dire <script type="math/tex">ℬ(n_1+n_2, p)</script>. </p>
+</blockquote>
+<h2 id="section-1">Section 1: 讲好一个故事</h2>
+<p>我并不以为 le corrigé 是正确的。首先一个 <script type="math/tex">X \sim ℬ(n, p)</script> 不一定就能被写成 <script type="math/tex">X = U_1+\dots+U_n</script> 的形式。其次，就算 <script type="math/tex">X~et~Y</script> indépendantes, <script type="math/tex">U_1,\dots,U_{n_1}</script> indépendantes, <script type="math/tex">V_1,\dots,V_{n_2}</script> indépendantes. <script type="math/tex">U_1,\dots,U_{n_1},V_1,\dots,V_{n_2}</script> 也并不一定 indépendantes. </p>
+<p>所以 le corrigé 并不正确。</p>
+<p>于是我们这样做：</p>
+<p>
+<script type="math/tex">Soit~m\in \N,</script>
+<br>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ℙ(X+Y=m) &= ℙ(\bigsqcup_{k=0}^m(X=k\land Y=m-k))\\
+&= \sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k}\\
+&= p^m(1-p)^{n_1+n_2-m}\sum_{k=0}^m{n_1\choose k}{n_2\choose m-k} (\text{Vandermonde's Identity})\\
+&= p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}
+\end{aligned}
+</script>
+</p>
+<p>于是有 <script type="math/tex">X+Y\sim ℬ(n_1+n_2, p)</script>. </p>
+<p>我们突然发现，其实我们根本不在乎 <script type="math/tex">\Omega</script> 是什么样的。</p>
+<h2 id="section-2">Section 2: 点题</h2>
+<p>由 Section 1，我们想要证明的不过是：</p>
+<p>
+<script type="math/tex; mode=display">
+\forall m\in\llbracket0, n_1+n_2\rrbracket, \sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k} = p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}
+</script>
+</p>
+<p>对此，我们对 le corrigé 中提到的那样的变量进行“实验”：</p>
+<p>On obtient <script type="math/tex">U_1,\dots,U_{n_1},V_1,\dots,V_{n_2} \sim ℬ(p)</script> indépendantes, </p>
+<p>On pose <script type="math/tex">X' = U_1+\dots+U_{n_1}, Y' = V_1+\dots+V_{n_2}</script>, alors on a: </p>
+<ol>
+<li>
+<script type="math/tex">X', Y'</script> indépendantes; </li>
+<li>
+<script type="math/tex">X'\sim ℬ(n_1, p), Y'\sim ℬ(n_2, p)</script>;</li>
+<li>
+<script type="math/tex">X'+Y' = U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}\sim ℬ(n_1+n_2,p)</script>;</li>
+</ol>
+<p>Par conséquent:</p>
+<p>Soit <script type="math/tex">m\in\llbracket0, n_1+n_2\rrbracket</script>,</p>
+<p>Par 1. 2. <script type="math/tex">ℙ(X'+Y'=m)=\sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k}</script>.<br>
+Par 3. <script type="math/tex">ℙ(X'+Y'=m)=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}</script>.<br>
+Donc, <script type="math/tex">\sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k}=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}.</script>.<br>
+Donc, <script type="math/tex">ℙ(X+Y=m)=\sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k}=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}</script>.</p>
+<p>Donc, <script type="math/tex">X+Y\sim ℬ(n_1+n_2,p)</script>
+</p>
+<p>也许，le corrigé 还是有一点擦边球的道理的。</p>
+<h2 id="section-3-reread">Section 3: Reread</h2>
+<p><del>“一点擦边球的道理的”</del></p>
+<blockquote>
+<p>«Puisqu'on ne s'intéresse qu'aux lois»</p>
+</blockquote>
+<p>也许他注意到了、也就是说我在 Section 1 中的想法完全是臆想。但这句话究竟是什么意思呢？</p>
+<p>对于此我有一些猜测。但猜测作者本来的意思并没有什么实际意义，作者的意思完全可以像是我在 Section 2 中表达的那样，落实到最后的和式上。重要的是这句话应该有什么意思。</p>
+<p>Supposons <script type="math/tex">X\sim L_1, Y\sim L_2</script> indépendantes, essayons de déterminer la loi de <script type="math/tex">F(X, Y)</script>.</p>
+<p>On obtient <script type="math/tex">X'\sim L_1, Y'\sim L_2</script> indépendantes, t.q. <script type="math/tex">F(X', Y')\sim L</script>.<br>
+On note <script type="math/tex">F(X, Y)\sim L</script> proposition p. </p>
+<p>这 p 应该是对的吧，我好想赶紧学测度论和 <em>A Probability Path</em> 啊。</p>
+<h2 id="section-4-section-1">Section 4: Section 1</h2>
+<blockquote>
+<p>«<script type="math/tex">(\text{Vandermonde's Identity})</script>»</p>
+</blockquote>
+<p>这是什么，你在最后一个等于号那里干了什么？</p>
+<p>但对于范德蒙德卷积，我确实不知道在生成函数与实际意义之外的证明。</p>
+<p>虎头蛇尾了。挖坑了。</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="https://maquilaque.fr/">maquilaque.fr</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://egretwalker.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
