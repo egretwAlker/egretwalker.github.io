@@ -7,19 +7,19 @@ Category: Maths
 
 今天在 TD 里遇到了一道题：
 
-> $X \sim ℬ(n_1, p), Y \sim ℬ(n_2, p)$ v.a. indépendantes.  
+> $X \sim \mathcal{B}(n_1, p), Y \sim \mathcal{B}(n_2, p)$ v.a. indépendantes.  
 > Déterminer la loi de $X+Y$
 
 在 le corrigé 里如此写道：
 
 > Une manière intelligente de procéder est la suivante:  
-> Considéron $n_1 + n_2$ variables aléatoires de loi $ℬ(p)$ indépendantes, $U_1, \dots, U_{n_1}, V_1,\dots,V_{n_2}$.  
+> Considéron $n_1 + n_2$ variables aléatoires de loi $\mathcal{B}(p)$ indépendantes, $U_1, \dots, U_{n_1}, V_1,\dots,V_{n_2}$.  
 > Puisqu'on ne s'intéresse qu'aux lois, on peut remplacer $X$ par $U_1+\dots+U_{n_1}$, $Y$ par $V_1+\dots+V_{n_2}$.  
-> Comme toutes ces variables sont indépendantes, $X_1 + X_2$ a alors même loi que $U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}$, c'est-à-dire $ℬ(n_1+n_2, p)$. 
+> Comme toutes ces variables sont indépendantes, $X_1 + X_2$ a alors même loi que $U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}$, c'est-à-dire $\mathcal{B}(n_1+n_2, p)$. 
 
 ## Section 1: 讲好一个故事
 
-我并不以为 le corrigé 是正确的。首先一个 $X \sim ℬ(n, p)$ 不一定就能被写成 $X = U_1+\dots+U_n$ 的形式。其次，就算 $X~et~Y$ indépendantes, $U_1,\dots,U_{n_1}$ indépendantes, $V_1,\dots,V_{n_2}$ indépendantes. $U_1,\dots,U_{n_1},V_1,\dots,V_{n_2}$ 也并不一定 indépendantes. 
+我并不以为 le corrigé 是正确的。首先一个 $X \sim \mathcal{B}(n, p)$ 不一定就能被写成 $X = U_1+\dots+U_n$ 的形式。其次，就算 $X~et~Y$ indépendantes, $U_1,\dots,U_{n_1}$ indépendantes, $V_1,\dots,V_{n_2}$ indépendantes. $U_1,\dots,U_{n_1},V_1,\dots,V_{n_2}$ 也并不一定 indépendantes. 
 
 所以 le corrigé 并不正确。
 
@@ -35,7 +35,7 @@ $$
 \end{aligned}
 $$
 
-于是有 $X+Y\sim ℬ(n_1+n_2, p)$. 
+于是有 $X+Y\sim \mathcal{B}(n_1+n_2, p)$. 
 
 我们突然发现，其实我们根本不在乎 $\Omega$ 是什么样的。
 
@@ -49,13 +49,13 @@ $$
 
 对此，我们对 le corrigé 中提到的那样的变量进行“实验”：
 
-On obtient $U_1,\dots,U_{n_1},V_1,\dots,V_{n_2} \sim ℬ(p)$ indépendantes, 
+On obtient $U_1,\dots,U_{n_1},V_1,\dots,V_{n_2} \sim \mathcal{B}(p)$ indépendantes, 
 
 On pose $X' = U_1+\dots+U_{n_1}, Y' = V_1+\dots+V_{n_2}$, alors on a: 
 
 1. $X', Y'$ indépendantes; 
-2. $X'\sim ℬ(n_1, p), Y'\sim ℬ(n_2, p)$;
-3. $X'+Y' = U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}\sim ℬ(n_1+n_2,p)$;
+2. $X'\sim \mathcal{B}(n_1, p), Y'\sim \mathcal{B}(n_2, p)$;
+3. $X'+Y' = U_1+\dots+U_{n_1}+V_1+\dots+V_{n_2}\sim \mathcal{B}(n_1+n_2,p)$;
 
 Par conséquent:
 
@@ -66,7 +66,7 @@ Par 3. $ℙ(X'+Y'=m)=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}$.
 Donc, $\sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k}=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}.$.  
 Donc, $ℙ(X+Y=m)=\sum_{k=0}^m{n_1\choose k}p^k(1-p)^{n_1-k}{n_2\choose m-k}p^{m-k}(1-p)^{n_2-m+k}=p^m(1-p)^{n_1+n_2-m}{n_1+n_2\choose m}$.
 
-Donc, $X+Y\sim ℬ(n_1+n_2,p)$
+Donc, $X+Y\sim \mathcal{B}(n_1+n_2,p)$
 
 也许，le corrigé 还是有一点擦边球的道理的。
 

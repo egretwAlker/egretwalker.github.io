@@ -83,12 +83,6 @@ Donc ${\mathring E}^c = \bigcap_i {O_i}^c = \bar {E^c}$
 > Mq $\ker(p) = \text{Im}(Id-f)$:  
 > $\ker(p) = \{x_2 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \{x - x_1 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \text{Im}(Id-f)$
 
-## Décomposition - loi binomiale 通用度：3
-
-Si $X ~ B(n, p)$, alors $X = X_1 + X_2 + ... + X_n$ où $\forall k, X_k ~ B(p)$ et ils sont mutullement indépendants. 
-
-有时 loi de Poission 相关的也可以这样子来思考（但能不能这样子证明呢。。？）
-
 ## Fonction - bijectivité 通用度：3.5
 
 $Id = f\circ g$ $\implies$ $f$ surjective, $g$ injective. 
@@ -142,3 +136,27 @@ $$
 > $$ 
 
 这叫做 linéariser。
+
+## Décomposition - loi binomiale 通用度：3 (dft)
+
+(以下内容是错误的。关于此有一个讨论，在另一片文章中《Experimental Maths（大雾）》)
+
+Si $X ~ B(n, p)$, alors $X = X_1 + X_2 + ... + X_n$ où $\forall k, X_k ~ B(p)$ et ils sont mutullement indépendants. 
+
+有时 loi de Poission 相关的也可以这样子来思考（但能不能这样子证明呢。。？）
+
+## Changement de Variable - Probabilité 通用度：unkonwn (dft)
+
+$X \sim \mathcal{N}(h, \sigma^2)$
+
+Soit $b\in \mathbb{R}$,
+
+$$
+\begin{aligned}
+\mathbb{P}(X\le b) &= \int_{-\infty}^{b}{1\over \sqrt{2\pi\sigma^2}}e^{(x-h)^2\over -2\sigma^2}dx\\
+(CDV: y={x-h\over \sigma})&= \int_{-\infty}^{b-h\over \sigma}{1\over \sqrt{2\pi}}e^{y^2}dy\\
+&= \mathbb{P}(Y\le {b-h\over \sigma})
+\end{aligned}
+$$
+
+où, a posteriori, $Y\sim\mathcal{N}(1, 0)$ et $Y={X-h\over \sigma}$. 
