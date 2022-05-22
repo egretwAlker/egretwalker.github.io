@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
-        <title>美文荟萃</title>
+        <title>线性代数奇思妙想</title>
         <link rel="stylesheet" href="https://egretwalker.github.io/theme/css/main.css" />
         <link href="https://egretwalker.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="loghj Atom Feed" />
 
@@ -36,7 +36,7 @@
 
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
 
-        <meta name="description" content="Table of Contents 一些美妙的证明 L'inégalité de Cauchy-Schwarz Inégalité par la formule de Taylor avec reste intégral Type 1 (普通) Type 2 (Je suis épaté |..." />
+        <meta name="description" content="Table of Contents Comment montrer si 2 matrices peuvent être pivotées à une même matrice? Pourraient 2 matrices (qui ont le même noyau) se..." />
 </head>
 
 <body id="index" class="home">
@@ -51,14 +51,14 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="https://egretwalker.github.io/drafts/mei-wen-hui-cui.html" rel="bookmark"
-           title="Permalink to 美文荟萃">美文荟萃</a></h1>
+        <a href="https://egretwalker.github.io/drafts/xian-xing-dai-shu-qi-si-miao-xiang.html" rel="bookmark"
+           title="Permalink to 线性代数奇思妙想">线性代数奇思妙想</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2022-03-19T00:00:00+01:00">
-                Published: Sat 19 March 2022
+        <abbr class="published" title="2022-05-07T00:00:00+02:00">
+                Published: Sat 07 May 2022
         </abbr>
 
         <address class="vcard author">
@@ -67,84 +67,25 @@
 <p>In <a href="https://egretwalker.github.io/category/misc.html">misc</a>.</p>
 
 </footer><!-- /.post-info -->      <div class="toc"><span class="toctitle">Table of Contents</span><ul>
-<li><a href="#_1">一些美妙的证明</a><ul>
-<li><a href="#linegalite-de-cauchy-schwarz">L'inégalité de Cauchy-Schwarz</a></li>
-<li><a href="#inegalite-par-la-formule-de-taylor-avec-reste-integral">Inégalité par la formule de Taylor avec reste intégral</a><ul>
-<li><a href="#type-1">Type 1 (普通)</a></li>
-<li><a href="#type-2-je-suis-epate">Type 2 (Je suis épaté | 我好傻)</a></li>
-</ul>
-</li>
-<li><a href="#developpement-limite-avec-reste-petit-o">Développement Limité avec reste petit o</a></li>
-</ul>
-</li>
+<li><a href="#comment-montrer-si-2-matrices-peuvent-etre-pivotees-a-une-meme-matrice">Comment montrer si 2 matrices peuvent être pivotées à une même matrice?</a></li>
+<li><a href="#pourraient-2-matrices-qui-ont-le-meme-noyau-se-pivotent-a-une-meme-matrice">Pourraient 2 matrices (qui ont le même noyau) se pivotent à une même matrice?</a></li>
 </ul>
 </div>
-<p><a href="https://xenaproject.wordpress.com/2019/06/11/the-inverse-of-a-bijection/">LEAN: 如果...我将能够解决哥德巴赫猜想：不（难）可（以）计算的函数</a></p>
-<h1 id="_1">一些美妙的证明</h1>
-<h2 id="linegalite-de-cauchy-schwarz">L'inégalité de Cauchy-Schwarz</h2>
-<p>
-<script type="math/tex; mode=display">
-\int_a^b (xf(t)+g(t))^2 dt = x^2\int_a^b f^2+x(2\int_a^b fg)+\int_a^b g^2 \ge 0
-</script>
-</p>
-<p>Donc</p>
-<p>
-<script type="math/tex; mode=display">
-\Delta = 4((\int_a^b fg)^2-(\int_a^b f^2)(\int_a^b g^2)) \le 0
-</script>
-</p>
-<p>
-<script type="math/tex; mode=display">
-(\int_a^b fg)^2 \le (\int_a^b f^2)(\int_a^b g^2)
-</script>
-</p>
-<p>
-<script type="math/tex">\int</script> 完全可以被替换成 <script type="math/tex">\sum</script>。只可惜只能在实数域下。但这还是一个超级漂亮的证明。对我来说。</p>
-<p><strong>Remarque</strong>: 当 <script type="math/tex">f,g</script> continues 的时候，取等条件等价于两函数 proportionnelles。</p>
-<h2 id="inegalite-par-la-formule-de-taylor-avec-reste-integral">Inégalité par la formule de Taylor avec reste intégral</h2>
-<h3 id="type-1">Type 1 (普通)</h3>
-<p>
-<script type="math/tex; mode=display">
-\text{Soit } x \in ℝ,\\
-\begin{aligned}
-\ln(1+x) &= x + \int_0^x (x-t){1\over 1+x}dx\\
-&\le x
-\end{aligned}
-</script>
-</p>
-<p>这适合那些积分 signe 一定的。这样的结论在 ℝ 下是一致的。</p>
-<h3 id="type-2-je-suis-epate">Type 2 (Je suis épaté | 我好傻)</h3>
-<p>
-<script type="math/tex">\text{Soit}~x \in ℝ^+,</script>
-<script type="math/tex; mode=display">
-\begin{aligned}
-\sin(x) &= x - {x^3\over 6} + \int_0^x{(x-t)^4\over 4!}cos(x)dx\\
-&\le x - {x^3\over 6} + \int_0^x{(x-t)^4\over 4!}1dx\\
-&= x - {x^3\over 6} + {x^5\over 5!}\\
-\end{aligned}
-</script>
-</p>
-<p>De même, <script type="math/tex">\forall x \in ℝ^+, \sin(x) \ge x - {x^3\over 6} - {x^5\over 5!}</script>
-</p>
-<p>这是很妙啊，不过要注意 x 的符号。</p>
-<h2 id="developpement-limite-avec-reste-petit-o">Développement Limité avec reste petit o</h2>
-<p>Au voisinage de x, <script type="math/tex">]x-\eta, x+\eta[</script>. </p>
-<p>Supposons que <script type="math/tex">F</script> dérivable, de dérivée <script type="math/tex">f</script>, <script type="math/tex">f(x) = o((x-x_0)^n)</script>.<br>
-Mq, <script type="math/tex">F(x) = F(x_0) + o((x-x_0)^{n+1})</script>
-<br>
-sorry</p>
-<p>Mq, <script type="math/tex">\forall</script>
-<script type="math/tex">f</script> dérivable <script type="math/tex">n</script> fois,<br>
-<script type="math/tex">f(x) = \sum_{k=0}^n {(x-x_0)^n\over n!}f^{(n)}(x_0)+o((x-x_0)^n)</script>
-</p>
-<p>On démontre par récurrence.  </p>
-<ul>
-<li>Initialisation, sorry  </li>
-<li>Hérédité, supposons <script type="math/tex">f</script> dérivable <script type="math/tex">n+1</script> fois.<br>
-    Par la hérédité, <script type="math/tex">f'(x) = \sum_{k=0}^n {(x-x_0)^n\over n!}f^{(n)}(x_0)+o((x-x_0)^n)</script>
-<br>
-    sorry</li>
-</ul>
+<h2 id="comment-montrer-si-2-matrices-peuvent-etre-pivotees-a-une-meme-matrice">Comment montrer si 2 matrices peuvent être pivotées à une même matrice?</h2>
+<p>Suppose A une matrice, A se pivote à deux matrices B, C échelonnées réduites. Montrons que B = C.</p>
+<p>On démontre par l'absurde en supposant que B != C.</p>
+<p>On constate que, quand A pivote, l'espace engendré de ses vecteurs de ligne ne change pas.</p>
+<p>Or, il existe une ligne de C qui ne peux pas être combinaison linéaire des lignes de B.</p>
+<p>Contradiction.</p>
+<p>Cela étant dit, on a aussi démontré que, en effet, si 2 matrices peux se pivoter à une même matrice, leur matrice échelonnée réduite doit être identique.</p>
+<p>Pour résumer, (sur les lignes et les colonnes) deux matrice ont un même image iff leur matrice échlonnée réduite est identique iff ils peuvent se pivoter à une même matrice.</p>
+<h2 id="pourraient-2-matrices-qui-ont-le-meme-noyau-se-pivotent-a-une-meme-matrice">Pourraient 2 matrices (qui ont le même noyau) se pivotent à une même matrice?</h2>
+<p>Si! Car la matrice échelonnée réduite associée est déterminée par le noyau. </p>
+<p>Soit A une matrice,</p>
+<p>A' la matrice échelonée réduite (de ligne) associée à A. Déjà on a une base de ker A qui forme une matrice échelonnée réduite. Or quand on fait 'poser les colonnes libres 1 resp. et obtenir une base de ker A', on obtient une base, si elle forme une matrice, échelonnée réduite. Donc les deux bases doivent être identique. Depuis les étapes pour déterminer la 2e base on déterimine A'.</p>
+<p>On constate aussi que Im(At) (+) Ker(A) = E</p>
+<p>Facile à prouver: Soit x dans Im(At) et Ker(A), alors on fait pivot la matrice tellement que x appraît, on voit que, si x != 0, A'x != 0, x n'est pas dans Ker(A).</p>
+<p>写得好恶心。。</p>
     </div><!-- /.entry-content -->
 
   </article>

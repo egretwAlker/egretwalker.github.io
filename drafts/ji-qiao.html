@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1.0">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>技巧</title>
+        <link rel="stylesheet" href="https://egretwalker.github.io/theme/css/main.css" />
+        <link href="https://egretwalker.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="loghj Atom Feed" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+        <!-- The loading of KaTeX is deferred to speed up page rendering -->
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+        <!-- To automatically render math in text elements, include the auto-render extension: -->
+        <!-- <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                  // customised options
+                  // • auto-render specific keys, e.g.:
+                  delimiters: [
+                      {left: '$$', right: '$$', display: true},
+                      {left: '$', right: '$', display: false},
+                      {left: '\\(', right: '\\)', display: false},
+                      {left: '\\[', right: '\\]', display: true}
+                  ],
+                  // • rendering keys, e.g.:
+                  throwOnError : false
+                });
+            });
+        </script> -->
+
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
+
+        <meta name="description" content="Tricks Subset L'extrêmité en valeur absolue 通用度：4 \max(a, b) = (a+b+|a-b|)/2 \min(a, b) = (a+b-|a-b|)/2 L'extrêmité des ensembles 通用度：2 On note..." />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://egretwalker.github.io/">loghj</a></h1>
+                <nav><ul>
+                    <li class="active"><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
+                    <li><a href="https://egretwalker.github.io/category/timus.html">Timus</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://egretwalker.github.io/drafts/ji-qiao.html" rel="bookmark"
+           title="Permalink to 技巧">技巧</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2022-03-19T00:00:00+01:00">
+                Published: Sat 19 March 2022
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="https://egretwalker.github.io/author/egretwalker.html">egretwalker</a>
+        </address>
+<p>In <a href="https://egretwalker.github.io/category/misc.html">misc</a>.</p>
+
+</footer><!-- /.post-info -->      <h1 id="tricks-subset">Tricks Subset</h1>
+<h2 id="lextremite-en-valeur-absolue-4">L'extrêmité en valeur absolue 通用度：4</h2>
+<p>
+<script type="math/tex; mode=display">
+\max(a, b) = (a+b+|a-b|)/2
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+\min(a, b) = (a+b-|a-b|)/2
+</script>
+</p>
+<h2 id="lextremite-des-ensembles-2">L'extrêmité des ensembles 通用度：2</h2>
+<p>On note <script type="math/tex">(O_i)</script> la famille de tous les sous-ensembles ouverts de <script type="math/tex">E</script>. Alors <script type="math/tex">\mathring E = \text{le maximum de }(O_i) = \bigcup_i O_i</script>. </p>
+<p>On note <script type="math/tex">(F_i)</script> la famille de tous les sur-ensembles fermés de <script type="math/tex">E</script>. Alors <script type="math/tex">\bar E = \text{le minimum de }(F_i) = \bigcap_i F_i</script>. </p>
+<p>Donc <script type="math/tex">{\mathring E}^c = \bigcap_i {O_i}^c = \bar {E^c}</script>
+</p>
+<ul>
+<li>稍微有同样感觉的一个题：</li>
+</ul>
+<blockquote>
+<p>
+<script type="math/tex">p : E \rightarrow F</script> une projection. Alors <script type="math/tex">E = \text{Im}(p)\bigoplus\ker(p)</script>.<br>
+Mq <script type="math/tex">\ker(p) = \text{Im}(Id-f)</script>:<br>
+<script type="math/tex">\ker(p) = \{x_2 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \{x - x_1 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \text{Im}(Id-f)</script>
+</p>
+</blockquote>
+<h2 id="fonction-bijectivite-35">Fonction - bijectivité 通用度：3.5</h2>
+<p>
+<script type="math/tex">Id = f\circ g</script>
+<script type="math/tex">\implies</script>
+<script type="math/tex">f</script> surjective, <script type="math/tex">g</script> injective. </p>
+<p>Si <script type="math/tex">f</script> bijective et <script type="math/tex">Id = f\circ g</script>; Alors <script type="math/tex">g = f^{-1}</script>:<br>
+<script type="math/tex">f^{-1}\circ Id = f^{-1}\circ f \circ g</script>, donc <script type="math/tex">f^{-1} = g</script>. </p>
+<ul>
+<li>一些典型的事情可以用这个来做</li>
+</ul>
+<blockquote>
+<p>
+<script type="math/tex">I = AB</script>; Alors <script type="math/tex">A</script> inversible et <script type="math/tex">A^{-1} = B</script>:<br>
+<script type="math/tex">\text{Im}(A)=\R^n</script> donc, <script type="math/tex">\text{rg}(A) = n</script>, <script type="math/tex">A</script> inversible...<br>
+又或者 application linéaire (dimension finie) 也是差不多的思路。</p>
+</blockquote>
+<h2 id="analyse-synthese-5">Analyse - Synthèse 通用度：5</h2>
+<p>例子：</p>
+<blockquote>
+<p>
+<script type="math/tex">E</script> ev et <script type="math/tex">s \in L(E)</script>. <script type="math/tex">s\circ s = Id_E</script>
+<br>
+Mq les seules valeurs propores possibles de <script type="math/tex">s</script> sont <script type="math/tex">1</script> et <script type="math/tex">-1</script>:<br>
+...<br>
+Soit <script type="math/tex">x \in E</script>. Mq <script type="math/tex">\exist x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm</script>:<br>
+<strong>Analyse</strong><br>
+Soit <script type="math/tex">x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm</script>.<br>
+Alors <script type="math/tex">s(x) = s(x_+ + x_-) = x_+ - x_-</script>
+<br>
+De plus <script type="math/tex">x = x_+ + x_-</script>.<br>
+Donc <script type="math/tex">x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}</script>.<br>
+<strong>Synthèse</strong><br>
+Mq <script type="math/tex">x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}</script> convient...</p>
+</blockquote>
+<p>这是很妙的啊。在 existe 那一步，我们想要提供一组解，但是没什么想法。于是我们通过 Analyse 来考虑解的必要形式。虽然说最终过程去掉 Analyse 也是说得通的。</p>
+<h2 id="sin-sous-forme-exponentielle-4">sin sous forme exponentielle 通用度：4</h2>
+<p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\sin(x) &= {\exp(xi)-\exp(-xi)\over 2i} \\
+\cos(x) &= {\exp(xi)+\exp(-xi)\over 2}
+\end{aligned}
+</script>
+</p>
+<p>例题：</p>
+<blockquote>
+<p>Calculer <script type="math/tex">\int_0^\pi \sin^3</script>
+<br>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\int_0^\pi \sin(x)^3dx &= \int_0^\pi ({e^{ix}-e^{-ix}\over 2i})^3dx\\
+&= \int_0^\pi {e^{3ix}-3e^{ix}+3e^{-ix}-e^{-3ix}\over -8i}dx\\
+&= -{1\over 4}\int_0^\pi (sin(3x)-3sin(x))dx\\
+&= {4\over 3}
+\end{aligned}
+</script>
+</p>
+</blockquote>
+<p>这叫做 linéariser。</p>
+<h2 id="decomposition-loi-binomiale-3-dft">Décomposition - loi binomiale 通用度：3 (dft)</h2>
+<p>(以下内容是错误的。关于此有一个讨论，在另一片文章中《Experimental Maths（大雾）》)</p>
+<p>Si <script type="math/tex">X ~ B(n, p)</script>, alors <script type="math/tex">X = X_1 + X_2 + ... + X_n</script> où <script type="math/tex">\forall k, X_k ~ B(p)</script> et ils sont mutullement indépendants. </p>
+<p>有时 loi de Poission 相关的也可以这样子来思考（但能不能这样子证明呢。。？）</p>
+<h2 id="changement-de-variable-probabilite-unkonwn-dft">Changement de Variable - Probabilité 通用度：unkonwn (dft)</h2>
+<p>
+<script type="math/tex">X \sim \mathcal{N}(h, \sigma^2)</script>
+</p>
+<p>Soit <script type="math/tex">b\in \mathbb{R}</script>,</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{P}(X\le b) &= \int_{-\infty}^{b}{1\over \sqrt{2\pi\sigma^2}}e^{(x-h)^2\over -2\sigma^2}dx\\
+(CDV: y={x-h\over \sigma})&= \int_{-\infty}^{b-h\over \sigma}{1\over \sqrt{2\pi}}e^{y^2}dy\\
+&= \mathbb{P}(Y\le {b-h\over \sigma})
+\end{aligned}
+</script>
+</p>
+<p>où, a posteriori, <script type="math/tex">Y\sim\mathcal{N}(1, 0)</script> et <script type="math/tex">Y={X-h\over \sigma}</script>.</p>
+<h2 id="faire-apparaitre-exp-3">Faire apparaître exp 通用度：3</h2>
+<p>比如可以用于求解微分方程。</p>
+<h2 id="linegalite-par-binome-de-newton-3">L'inégalité par binôme de Newton 通用度：3</h2>
+<p>
+<script type="math/tex; mode=display">
+1+nx \le (1+x)^n~(x\ge 0, n \in \mathbb{N}, n > 1)
+</script>
+</p>
+<p>Ou similairement. </p>
+<blockquote>
+<p><strong>Example</strong><br>
+Mq <script type="math/tex">\lim (n^{1\over n}) = 1</script>
+<br>
+On pose <script type="math/tex">x_n = n^{1\over n} - 1</script>
+<br>
+<script type="math/tex">n = (1+x_n)^n \ge {n(n-1)\over 2}{x_n}^2</script>
+<br>
+<script type="math/tex">0 \le x_n \le \sqrt{2\over n-1}</script>
+<br>
+Théorème des gerdarmes...</p>
+</blockquote>
+<h2 id="comparaison-des-bornes-superieures-et-infereures-ou-meme-2-nombres-4">Comparaison des bornes supérieures et inféreures (ou même 2 nombres...) 通用度：4</h2>
+<p>
+<script type="math/tex; mode=display">
+Mq~a\le l
+</script>
+</p>
+<ul>
+<li>Montrer que <script type="math/tex">\forall d>0, a\le l+d</script> (1)</li>
+</ul>
+<p>
+<script type="math/tex; mode=display">
+Mq~\sup H \le l
+</script>
+</p>
+<ul>
+<li>Montrer que <script type="math/tex">\forall t\in H, t \le l</script> (2)</li>
+<li>Combiner (1) et (2), on pourrait montrer que <script type="math/tex">\forall d>0, \forall t\in H, t \le l+d</script>
+</li>
+</ul>
+<blockquote>
+<p>Example<br>
+Soit <script type="math/tex">(a_n)</script> une suite des réels strictement positives.<br>
+Mq <script type="math/tex">\lim \sup (\sqrt[n]{a_n}) \le \lim \sup ({a_{n+1}\over a_{n}})</script>
+<br>
+On note <script type="math/tex">\alpha=\lim \sup ({a_{n+1}\over a_{n}})</script>.<br>
+Si <script type="math/tex">\alpha = +\infty</script>, rien à prouver.  Si <script type="math/tex">\alpha \not= +\infty</script>
+Soit <script type="math/tex">\beta > \alpha</script>, il existe <script type="math/tex">N</script>, <script type="math/tex">\forall n \ge N,{a_n+1\over a_n}\le \beta</script>.<br>
+Donc par récurrence simple, <script type="math/tex">\forall n \ge N, a_n \le \beta^{n-N}a_N</script>. Donc <script type="math/tex">\forall n \ge N, \sqrt[n]{a_n} \le \sqrt[n]{\beta^{-N}a_N}\beta</script>.<br>
+Or <script type="math/tex">\lim \sqrt[n]{\beta^{-N}a_N}\beta = \beta</script>, <script type="math/tex">\lim \sup (\sqrt[n]{a_n}) \le \beta</script>
+<br>
+On vient de prouver que <script type="math/tex">\forall \beta > \alpha, \lim \sup (\sqrt[n]{a_n}) \le \beta</script>
+<br>
+On conclut que <script type="math/tex">\lim \sup (\sqrt[n]{a_n}) \le \alpha = \lim \sup ({a_{n+1}\over a_{n}})</script>
+</p>
+</blockquote>
+<h2 id="inegalites-qui-viennent-du-vide-4">Inégalités qui viennent du vide 通用度：4</h2>
+<blockquote>
+<p>Example<br>
+<script type="math/tex">\sum a_n</script> à termes positifs converge<br>
+Mq <script type="math/tex">\sum {\sqrt{a_n}\over n}</script> converge<br>
+Soit <script type="math/tex">n \in \mathbb{N}</script>,<br>
+<script type="math/tex">(\sqrt{a_n}-{1\over n})^2 \ge 0</script>
+<br>
+d'où <script type="math/tex">a_n+{1\over n^2} \ge {2\sqrt{a_n}\over n}</script>.<br>
+Voilà...</p>
+</blockquote>
+<p>En fait, penser au binôme de Newton.</p>
+<h2 id="warning-silly-me">Warning SILLY mE</h2>
+<ul>
+<li>
+<script type="math/tex">\dim \mathbb{R}_n[X] = n+1</script> in lieu of <script type="math/tex">n</script>
+</li>
+<li>
+<script type="math/tex">\lim_{\pm\infty}\arctan = \pm{\pi\over 2}</script> in lieu of <script type="math/tex">\pm 1</script>
+</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="https://getpelican.com/">Pelican</a></li>
+                            <li><a href="https://www.python.org/">Python.org</a></li>
+                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
+                            <li><a href="https://maquilaque.fr/">maquilaque.fr</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="https://egretwalker.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

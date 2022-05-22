@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>loghj</title><link href="https://egretwalker.github.io/" rel="alternate"></link><link href="https://egretwalker.github.io/feeds/all.atom.xml" rel="self"></link><id>https://egretwalker.github.io/</id><updated>2022-05-02T00:00:00+02:00</updated><entry><title>Timus 1040 Solution</title><link href="https://egretwalker.github.io/timus-1040-solution.html" rel="alternate"></link><published>2022-05-02T00:00:00+02:00</published><updated>2022-05-02T00:00:00+02:00</updated><author><name>egretwalker</name></author><id>tag:egretwalker.github.io,2022-05-02:/timus-1040-solution.html</id><summary type="html">&lt;p&gt;&lt;a href="https://timus.online/problem.aspx?space=1&amp;amp;num=1040"&gt;题面&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>loghj</title><link href="https://egretwalker.github.io/" rel="alternate"></link><link href="https://egretwalker.github.io/feeds/all.atom.xml" rel="self"></link><id>https://egretwalker.github.io/</id><updated>2022-05-04T00:00:00+02:00</updated><entry><title>Timus-Algèbre Linéaire Base x Dimension-(1041, 1042) Solution</title><link href="https://egretwalker.github.io/timus-algebre-lineaire-base-x-dimension-1041-1042-solution.html" rel="alternate"></link><published>2022-05-04T00:00:00+02:00</published><updated>2022-05-04T00:00:00+02:00</updated><author><name>egretwalker</name></author><id>tag:egretwalker.github.io,2022-05-04:/timus-algebre-lineaire-base-x-dimension-1041-1042-solution.html</id><summary type="html">&lt;p&gt;(1041) 题意：&lt;/p&gt;
+&lt;p&gt;有一些向量，这些每个向量带有一个价格。请用最少的钱来购买一个 base。或者输出不可能。&lt;/p&gt;
+&lt;p&gt;题解：&lt;/p&gt;
+&lt;p&gt;按价格低到高看，看到 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;(1041) 题意：&lt;/p&gt;
+&lt;p&gt;有一些向量，这些每个向量带有一个价格。请用最少的钱来购买一个 base。或者输出不可能。&lt;/p&gt;
+&lt;p&gt;题解：&lt;/p&gt;
+&lt;p&gt;按价格低到高看，看到不能被已经买了的向量线性组合出来的向量就购入——如果最终买了 n 个向量那么我们就获得一组最优解，如果最终买入的向量不足 n 个，那么无解。&lt;/p&gt;
+&lt;p&gt;证明，就像其他所有贪心算法的证明一样，如果在某一个时刻，我们已经有 &lt;script type="math/tex"&gt;(e_1, \dots, e_k)&lt;/script&gt;
+&lt;script type="math/tex"&gt;k&lt;/script&gt; 个向量，我们决策决定买入 &lt;script type="math/tex"&gt;v&lt;/script&gt;，但在最优解 &lt;script type="math/tex"&gt;(e_1, \dots, e_n)&lt;/script&gt; 中没有买入。那么我们将 &lt;script type="math/tex"&gt;v&lt;/script&gt; 表示成 &lt;script type="math/tex"&gt;v = a_1e_1+\dots+a_ne_n&lt;/script&gt;. 我们有存在 &lt;script type="math/tex"&gt;i &gt; k, a_i\not=0&lt;/script&gt;。那么将 &lt;script type="math/tex"&gt;e_i&lt;/script&gt; 退掉买回 &lt;script type="math/tex"&gt;v&lt;/script&gt;，我们获得一组更便宜的解。&lt;/p&gt;
+&lt;p&gt;至于怎么动态加向量，判断是否线性独立：&lt;/p&gt;
+&lt;p&gt;维护一个线性基，并且，其具有如下性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;所有的向量按加入的先后顺序摆放；&lt;/li&gt;
+&lt;li&gt;所有的向量 pivot 都是其第一个非 0 元素；&lt;/li&gt;
+&lt;li&gt;所有向量的 pivot 的位置，在后加入的元素来中，都是 0；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这样的线性基，当我们想要加入一个元素的时候，就可以用从前往后的向量依次消元，最后消除来如果是 0，那么就是能被表示出来，如果非零，那么所得到的结果的向量就可以直接被加入线性基的末尾。是不是很妙呢！&lt;/p&gt;
+&lt;p&gt;(1042) 题意：&lt;/p&gt;
+&lt;p&gt;有 n 个 n 维 0/1 向量 &lt;script type="math/tex"&gt;\{0, 1\}^n&lt;/script&gt;，每一个都不能通过别的所有向量子集的异或和表示出来。&lt;/p&gt;
+&lt;p&gt;求一个子集的这 n 个向量，其异或和为全 1 向量。&lt;/p&gt;
+&lt;p&gt;题解：&lt;/p&gt;
+&lt;p&gt;坑。等我对于代数结构有了更深层次的了解之后在来证明吧。&lt;/p&gt;
+&lt;p&gt;总而言之，是以 &amp;amp; 为乘法，^ 为加法的 corps（？）。&lt;/p&gt;</content><category term="Timus"></category></entry><entry><title>Timus 1040 Solution</title><link href="https://egretwalker.github.io/timus-1040-solution.html" rel="alternate"></link><published>2022-05-02T00:00:00+02:00</published><updated>2022-05-02T00:00:00+02:00</updated><author><name>egretwalker</name></author><id>tag:egretwalker.github.io,2022-05-02:/timus-1040-solution.html</id><summary type="html">&lt;p&gt;&lt;a href="https://timus.online/problem.aspx?space=1&amp;amp;num=1040"&gt;题面&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;题意：有一张无向简单联通图，n 点 m 边。请将 m 条边分配上 [1, m] 中的一个整数使得每一个点，如果有不止一条边，那么 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://timus.online/problem.aspx?space=1&amp;amp;num=1040"&gt;题面&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;题意：有一张无向简单联通图，n 点 m 边。请将 m 条边分配上 [1, m] 中的一个整数使得每一个点，如果有不止一条边，那么这些边的 gcd 为 1。&lt;/p&gt;
 &lt;p&gt;注意到 gcd(k, k+1) = 1。于是，如果我们将一条欧拉路径上的边依次分配上 a, a+1, ..., a+b，那么除了路径两端的点，路径上的点一定都已经“满足”了。&lt;/p&gt;
