@@ -6,7 +6,7 @@ Status: draft
 
 [LEAN: 如果...我将能够解决哥德巴赫猜想：不（难）可（以）计算的函数](https://xenaproject.wordpress.com/2019/06/11/the-inverse-of-a-bijection/)
 
-# 一些美妙的证明（目前全是关于基本的不等式的简洁证明）
+# 一些美妙的证明
 
 ## L'inégalité de Cauchy-Schwarz
 
@@ -26,7 +26,7 @@ $$
 
 $\int$ 完全可以被替换成 $\sum$。只可惜只能在实数域下。但这还是一个超级漂亮的证明。对我来说。
 
-**Remarque**: 当 $f,g$ continues 的是否，取等条件等价于两函数 proportionnelles。
+**Remarque**: 当 $f,g$ continues 的时候，取等条件等价于两函数 proportionnelles。
 
 ## Inégalité par la formule de Taylor avec reste intégral
 
@@ -44,8 +44,8 @@ $$
 
 ### Type 2 (Je suis épaté | 我好傻)
 
+$\text{Soit}~x \in ℝ^+,$
 $$
-\text{Soit } x \in ℝ^+,\\
 \begin{aligned}
 \sin(x) &= x - {x^3\over 6} + \int_0^x{(x-t)^4\over 4!}cos(x)dx\\
 &\le x - {x^3\over 6} + \int_0^x{(x-t)^4\over 4!}1dx\\
@@ -57,106 +57,20 @@ De même, $\forall x \in ℝ^+, \sin(x) \ge x - {x^3\over 6} - {x^5\over 5!}$
 
 这是很妙啊，不过要注意 x 的符号。
 
-# Tricks Subset
+## Développement Limité avec reste petit o
 
-## L'extrêmité en valeur absolue 通用度：4
+Au voisinage de x, $]x-\eta, x+\eta[$. 
 
-$$
-\max(a, b) = (a+b+|a-b|)/2
-$$
+Supposons que $F$ dérivable, de dérivée $f$, $f(x) = o((x-x_0)^n)$.  
+Mq, $F(x) = F(x_0) + o((x-x_0)^{n+1})$  
+sorry
 
-$$
-\min(a, b) = (a+b-|a-b|)/2
-$$
+Mq, $\forall$ $f$ dérivable $n$ fois,  
+$f(x) = \sum_{k=0}^n {(x-x_0)^n\over n!}f^{(n)}(x_0)+o((x-x_0)^n)$
 
-## L'extrêmité des ensembles 通用度：2
+On démontre par récurrence.  
 
-On note $(O_i)$ la famille de tous les sous-ensembles ouverts de $E$. Alors $\mathring E = \text{le maximum de }(O_i) = \bigcup_i O_i$. 
-
-On note $(F_i)$ la famille de tous les sur-ensembles fermés de $E$. Alors $\bar E = \text{le minimum de }(F_i) = \bigcap_i F_i$. 
-
-Donc ${\mathring E}^c = \bigcap_i {O_i}^c = \bar {E^c}$
-
-- 稍微有同样感觉的一个题：
-
-> $p : E \rightarrow F$ une projection. Alors $E = \text{Im}(p)\bigoplus\ker(p)$.  
-> Mq $\ker(p) = \text{Im}(Id-f)$:  
-> $\ker(p) = \{x_2 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \{x - x_1 | x \in E, x = x_1 + x_2 (x_1 \in \text{Im}(p), x_2 \in \ker(p))\} = \text{Im}(Id-f)$
-
-## Fonction - bijectivité 通用度：3.5
-
-$Id = f\circ g$ $\implies$ $f$ surjective, $g$ injective. 
-
-Si $f$ bijective et $Id = f\circ g$; Alors $g = f^{-1}$:  
-$f^{-1}\circ Id = f^{-1}\circ f \circ g$, donc $f^{-1} = g$. 
-
-- 一些典型的事情可以用这个来做
-
-> $I = AB$; Alors $A$ inversible et $A^{-1} = B$:  
-> $\text{Im}(A)=\R^n$ donc, $\text{rg}(A) = n$, $A$ inversible...  
-> 又或者 application linéaire (dimension finie) 也是差不多的思路。
-
-## Analyse - Synthèse 通用度：5
-
-例子：
-
-> $E$ ev et $s \in L(E)$. $s\circ s = Id_E$  
-> Mq les seules valeurs propores possibles de $s$ sont $1$ et $-1$:  
-> ...  
-> Soit $x \in E$. Mq $\exist x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm$:  
-> **Analyse**  
-> Soit $x_+,x_-\text{ t.q. }x = x_+ + x_-,et,s(x_\pm)=\pm x_\pm$.  
-> Alors $s(x) = s(x_+ + x_-) = x_+ - x_-$  
-> De plus $x = x_+ + x_-$.  
-> Donc $x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}$.  
-> **Synthèse**  
-> Mq $x_+ = {(x + s(x))\over 2}, x_- = {(x - s(x))\over 2}$ convient...
-
-这是很妙的啊。在 existe 那一步，我们想要提供一组解，但是没什么想法。于是我们通过 Analyse 来考虑解的必要形式。虽然说最终过程去掉 Analyse 也是说得通的。
-
-## sin sous forme exponentielle 通用度：4
-
-$$
-\begin{aligned}
-\sin(x) &= {\exp(xi)-\exp(-xi)\over 2i} \\
-\cos(x) &= {\exp(xi)+\exp(-xi)\over 2}
-\end{aligned}
-$$
-
-例题：
-
-> Calculer $\int_0^\pi \sin^3$  
-> $$
-> \begin{aligned}
-> \int_0^\pi \sin(x)^3dx &= \int_0^\pi ({e^{ix}-e^{-ix}\over 2i})^3dx\\
-> &= \int_0^\pi {e^{3ix}-3e^{ix}+3e^{-ix}-e^{-3ix}\over -8i}dx\\
-> &= -{1\over 4}\int_0^\pi (sin(3x)-3sin(x))dx\\
-> &= {4\over 3}
-> \end{aligned}
-> $$ 
-
-这叫做 linéariser。
-
-## Décomposition - loi binomiale 通用度：3 (dft)
-
-(以下内容是错误的。关于此有一个讨论，在另一片文章中《Experimental Maths（大雾）》)
-
-Si $X ~ B(n, p)$, alors $X = X_1 + X_2 + ... + X_n$ où $\forall k, X_k ~ B(p)$ et ils sont mutullement indépendants. 
-
-有时 loi de Poission 相关的也可以这样子来思考（但能不能这样子证明呢。。？）
-
-## Changement de Variable - Probabilité 通用度：unkonwn (dft)
-
-$X \sim \mathcal{N}(h, \sigma^2)$
-
-Soit $b\in \mathbb{R}$,
-
-$$
-\begin{aligned}
-\mathbb{P}(X\le b) &= \int_{-\infty}^{b}{1\over \sqrt{2\pi\sigma^2}}e^{(x-h)^2\over -2\sigma^2}dx\\
-(CDV: y={x-h\over \sigma})&= \int_{-\infty}^{b-h\over \sigma}{1\over \sqrt{2\pi}}e^{y^2}dy\\
-&= \mathbb{P}(Y\le {b-h\over \sigma})
-\end{aligned}
-$$
-
-où, a posteriori, $Y\sim\mathcal{N}(1, 0)$ et $Y={X-h\over \sigma}$. 
+-   Initialisation, sorry  
+-   Hérédité, supposons $f$ dérivable $n+1$ fois.  
+    Par la hérédité, $f'(x) = \sum_{k=0}^n {(x-x_0)^n\over n!}f^{(n)}(x_0)+o((x-x_0)^n)$  
+    sorry
