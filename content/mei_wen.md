@@ -74,3 +74,17 @@ On démontre par récurrence.
 -   Hérédité, supposons $f$ dérivable $n+1$ fois.  
     Par la hérédité, $f'(x) = \sum_{k=0}^n {(x-x_0)^n\over n!}f^{(n)}(x_0)+o((x-x_0)^n)$  
     sorry
+
+## L'inégalité des accroissements finis - fonctions vectorielles
+
+On pose $f: [a, b]\rightarrow \R^k$, continue sur $[a, b]$, dérivable sur $]a, b[$.
+
+Mq. $\exist x\in]a, b[, |f(b)-f(a)|\le (b-a)|f'(x)|$
+
+On pose $z = f(b)-f(a)$, $\phi(t)=z\cdot f(t)$.
+
+Il existe $x\in]a, b[$ t.q. $\phi(b)-\phi(a) = \phi'(x)(b-a)$.
+
+Alors, $|z|^2 = z\cdot z = (b-a)\cdot \phi'(x) = (b-a)(z\cdot f'(x)) \le (b-a)|z||f'(x)|$
+
+Ainsi, si $|z|=0$...si $|z|\not=0$...

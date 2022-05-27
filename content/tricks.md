@@ -163,7 +163,6 @@ $$
 
 En fait, penser au binôme de Newton.
 
-
 ## Warning SILLY mE
 
 - $\dim \mathbb{R}_n[X] = n+1$ in lieu of $n$
