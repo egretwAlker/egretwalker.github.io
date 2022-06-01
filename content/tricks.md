@@ -14,6 +14,10 @@ $$
 \min(a, b) = (a+b-|a-b|)/2
 $$
 
+$$
+ab = ((a+b)^2-(a-b)^2)/4
+$$
+
 ## L'extrêmité des ensembles 通用度：2
 
 On note $(O_i)$ la famille de tous les sous-ensembles ouverts de $E$. Alors $\mathring E = \text{le maximum de }(O_i) = \bigcup_i O_i$. 
@@ -162,6 +166,11 @@ $$
 > Voilà...
 
 En fait, penser au binôme de Newton.
+
+## Utilization d'$\epsilon$
+
+- $a\le b \iff \forall \epsilon > 0, a\le b+\epsilon$ 看似让步，实则无所失。
+- $I = \sup A \implies  \forall\epsilon>0, \exist x\in A,x>I-\epsilon$
 
 ## Warning SILLY mE
 
