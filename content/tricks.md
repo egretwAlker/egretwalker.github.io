@@ -172,6 +172,12 @@ En fait, penser au binôme de Newton.
 - $a\le b \iff \forall \epsilon > 0, a\le b+\epsilon$ 看似让步，实则无所失。
 - $I = \sup A \implies  \forall\epsilon>0, \exist x\in A,x>I-\epsilon$
 
+## Théorème des Accroissements Finis Généralisé
+
+- Normal
+- Généralisé
+- f(x)-f(y)-g(x)+g(y) = (f-g)(x)-(f-g)(y) = (f-g)'(c) = f'(c) - g'(c) 这点小技巧还是要晓得的。
+
 ## Warning SILLY mE
 
 - $\dim \mathbb{R}_n[X] = n+1$ in lieu of $n$
