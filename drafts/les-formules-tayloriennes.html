@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
-        <title>loghj - misc</title>
+        <title>Les Formules Tayloriennes</title>
         <link rel="stylesheet" href="https://egretwalker.github.io/theme/css/main.css" />
         <link href="https://egretwalker.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="loghj Atom Feed" />
 
@@ -36,38 +36,71 @@
 
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
 
+        <meta name="description" content="显然这世界上有好多个 Taylor，但其中一个泰勒与众不同，她会唱歌他的名字出现在了许多类似的公式中。 在 L1 的时候，我学习 …" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="https://egretwalker.github.io/">loghj</a></h1>
                 <nav><ul>
-                    <li><a href="https://egretwalker.github.io/category/maths.html">Maths</a></li>
-                    <li class="active"><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
+                    <li class="active"><a href="https://egretwalker.github.io/category/maths.html">Maths</a></li>
+                    <li><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
                     <li><a href="https://egretwalker.github.io/category/timus.html">Timus</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="https://egretwalker.github.io/drafts/les-formules-tayloriennes.html" rel="bookmark"
+           title="Permalink to Les Formules Tayloriennes">Les Formules Tayloriennes</a></h1>
+    </header>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://egretwalker.github.io/intro.html">Intro</a></h1>
-                    <div class="entry-content">
+    <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2022-02-24T00:00:00+01:00">
-                Published: Thu 24 February 2022
+        <abbr class="published" title="2022-05-04T00:00:00+02:00">
+                Published: Wed 04 May 2022
         </abbr>
 
         <address class="vcard author">
                 By                         <a class="url fn" href="https://egretwalker.github.io/author/egretwalker.html">egretwalker</a>
         </address>
-<p>In <a href="https://egretwalker.github.io/category/misc.html">misc</a>.</p>
+<p>In <a href="https://egretwalker.github.io/category/maths.html">maths</a>.</p>
 
-</footer><!-- /.post-info -->                    <p>索邦大学 L1 在读。</p>
-<p>在博客里会写一些 OI 题解以缅怀高中可怜的时光。</p>
-                    <a class="readmore" href="https://egretwalker.github.io/intro.html">read more</a>
-                    </div><!-- /.entry-content -->
-                </article>
-            </aside><!-- /#featured -->
+</footer><!-- /.post-info -->      <p>显然这世界上有好多个 Taylor，但其中一个泰勒与众不同，<del>她会唱歌</del>他的名字出现在了许多类似的公式中。</p>
+<p>在 L1 的时候，我学习了大约四类泰勒公式，</p>
+<ol>
+<li>带 o 的；</li>
+<li>带 Reste Intégrale 的；</li>
+<li>带 O 的；</li>
+<li>带 <script type="math/tex">f^{(n)}(x_0)</script> 的；</li>
+</ol>
+<p>(1) 只是要求 n fois dérivable sur un point, (2) 则要求 Cn，而 (3)(4) 则算是 (2) 的 corollaire。（1）的证明比较巧妙，我应该已经在博客某处写过了，本身其一阶形式也十分有用。</p>
+<p>而我今天在《baby rudin》上又发现了一个关于 (4) 的论述，对于条件的要求是更松了，十分欣喜。</p>
+<p>
+<script type="math/tex">\text{On pose}~f:[a, b]\rightarrow\R, \text{t.q.}\\f~\text{de classe n-1 sur}~[a, b],\text{dérivable sur}~]a, b[.~ \alpha, \beta\in]a, b[</script>
+</p>
+<p>On définit:</p>
+<p>
+<script type="math/tex; mode=display">
+P(t) = \sum_{k=0}^{n-1}{f^{(k)}(\alpha)(t-\alpha)^k\over k!}
+</script>
+</p>
+<p>Mq. <script type="math/tex">\exist x\in]a, b[, f(\beta)=P(\beta)+{f^{(n)}(x)(\beta-\alpha)^n\over n!}</script>
+</p>
+<p>Si <script type="math/tex">\alpha=\beta</script>, trivial...</p>
+<p>法一：</p>
+<p>On pose <script type="math/tex">g(t) = f(t)-P(t)-{M(t-\alpha)^n\over n!}</script> avec <script type="math/tex">M</script> t.q. <script type="math/tex">f(\beta)-P(\beta)-{M(\beta-\alpha)^n\over n!}=0</script>
+</p>
+<p>
+<script type="math/tex">g(\alpha)=g(\beta)=0</script>, alors, il existe <script type="math/tex">x_1\in]\alpha, \beta[</script> (ou <script type="math/tex">]\beta, \alpha[</script>) t.q. <script type="math/tex">g'(x_1)=0</script>. Or <script type="math/tex">g'(\alpha)=0</script>, il existe <script type="math/tex">x_2 \in ]\alpha, \beta[</script> t.q. <script type="math/tex">g''(x_2)=0</script> ... Il existe <script type="math/tex">x_n \in ]\alpha, \beta[</script> t.q. <script type="math/tex">g^{(n)}(x_n)=0</script>
+</p>
+<p>Or, <script type="math/tex">g^{(n)}(x_n)=f^{(n)}(x_n)-M</script>. Donc <script type="math/tex">f(\beta)=P(\beta)+{f^{(n)}(x)(\beta-\alpha)^n\over n!}</script>.</p>
+<p>好妙啊。。</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>links</h2>

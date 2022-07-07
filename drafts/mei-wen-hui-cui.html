@@ -43,6 +43,7 @@
         <header id="banner" class="body">
                 <h1><a href="https://egretwalker.github.io/">loghj</a></h1>
                 <nav><ul>
+                    <li><a href="https://egretwalker.github.io/category/maths.html">Maths</a></li>
                     <li class="active"><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
                     <li><a href="https://egretwalker.github.io/category/timus.html">Timus</a></li>
                 </ul></nav>
@@ -75,6 +76,7 @@
 </ul>
 </li>
 <li><a href="#developpement-limite-avec-reste-petit-o">Développement Limité avec reste petit o</a></li>
+<li><a href="#linegalite-des-accroissements-finis-fonctions-vectorielles">L'inégalité des accroissements finis - fonctions vectorielles</a></li>
 </ul>
 </li>
 </ul>
@@ -145,6 +147,15 @@ sorry</p>
 <br>
     sorry</li>
 </ul>
+<h2 id="linegalite-des-accroissements-finis-fonctions-vectorielles">L'inégalité des accroissements finis - fonctions vectorielles</h2>
+<p>On pose <script type="math/tex">f: [a, b]\rightarrow \R^k</script>, continue sur <script type="math/tex">[a, b]</script>, dérivable sur <script type="math/tex">]a, b[</script>.</p>
+<p>Mq. <script type="math/tex">\exist x\in]a, b[, |f(b)-f(a)|\le (b-a)|f'(x)|</script>
+</p>
+<p>On pose <script type="math/tex">z = f(b)-f(a)</script>, <script type="math/tex">\phi(t)=z\cdot f(t)</script>.</p>
+<p>Il existe <script type="math/tex">x\in]a, b[</script> t.q. <script type="math/tex">\phi(b)-\phi(a) = \phi'(x)(b-a)</script>.</p>
+<p>Alors, <script type="math/tex">|z|^2 = z\cdot z = (b-a)\cdot \phi'(x) = (b-a)(z\cdot f'(x)) \le (b-a)|z||f'(x)|</script>
+</p>
+<p>Ainsi, si <script type="math/tex">|z|=0</script>...si <script type="math/tex">|z|\not=0</script>...</p>
     </div><!-- /.entry-content -->
 
   </article>

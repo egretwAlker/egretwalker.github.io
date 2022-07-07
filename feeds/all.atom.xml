@@ -1,5 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>loghj</title><link href="https://egretwalker.github.io/" rel="alternate"></link><link href="https://egretwalker.github.io/feeds/all.atom.xml" rel="self"></link><id>https://egretwalker.github.io/</id><updated>2022-05-04T00:00:00+02:00</updated><entry><title>Timus-Algèbre Linéaire Base x Dimension-(1041, 1042) Solution</title><link href="https://egretwalker.github.io/timus-algebre-lineaire-base-x-dimension-1041-1042-solution.html" rel="alternate"></link><published>2022-05-04T00:00:00+02:00</published><updated>2022-05-04T00:00:00+02:00</updated><author><name>egretwalker</name></author><id>tag:egretwalker.github.io,2022-05-04:/timus-algebre-lineaire-base-x-dimension-1041-1042-solution.html</id><summary type="html">&lt;p&gt;(1041) 题意：&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>loghj</title><link href="https://egretwalker.github.io/" rel="alternate"></link><link href="https://egretwalker.github.io/feeds/all.atom.xml" rel="self"></link><id>https://egretwalker.github.io/</id><updated>2022-06-27T00:00:00+02:00</updated><entry><title>One Liners</title><link href="https://egretwalker.github.io/one-liners.html" rel="alternate"></link><published>2022-06-27T00:00:00+02:00</published><updated>2022-06-27T00:00:00+02:00</updated><author><name>egretwalker</name></author><id>tag:egretwalker.github.io,2022-06-27:/one-liners.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;\lim(a_n) = l \iff \sup\lim(a_n) = \inf\lim(a_n) = l&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;f~\text{dérivable en}~x_0~et~f'(x_0) = a \iff f(x) = f(x_0) + a(x-x_0) + o(x-x_0)&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;E~\text{parfait} \iff E = E'&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;E~\text{fermé} \iff E = \bar E …&lt;/script&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;\lim(a_n) = l \iff \sup\lim(a_n) = \inf\lim(a_n) = l&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;f~\text{dérivable en}~x_0~et~f'(x_0) = a \iff f(x) = f(x_0) + a(x-x_0) + o(x-x_0)&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;E~\text{parfait} \iff E = E'&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;E~\text{fermé} \iff E = \bar E&lt;/script&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Maths"></category></entry><entry><title>Timus-Algèbre Linéaire Base x Dimension-(1041, 1042) Solution</title><link href="https://egretwalker.github.io/timus-algebre-lineaire-base-x-dimension-1041-1042-solution.html" rel="alternate"></link><published>2022-05-04T00:00:00+02:00</published><updated>2022-05-04T00:00:00+02:00</updated><author><name>egretwalker</name></author><id>tag:egretwalker.github.io,2022-05-04:/timus-algebre-lineaire-base-x-dimension-1041-1042-solution.html</id><summary type="html">&lt;p&gt;(1041) 题意：&lt;/p&gt;
 &lt;p&gt;有一些向量，这些每个向量带有一个价格。请用最少的钱来购买一个 base。或者输出不可能。&lt;/p&gt;
 &lt;p&gt;题解：&lt;/p&gt;
 &lt;p&gt;按价格低到高看，看到 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;(1041) 题意：&lt;/p&gt;
@@ -184,4 +208,4 @@
 &lt;p&gt;此时，人感觉好像无论枚举哪个 frame 对 有/无解 这个属性没有影响：这是对的，因为假设本来如果有解（记 &lt;script type="math/tex"&gt;G&lt;/script&gt; 为当前地图，&lt;script type="math/tex"&gt;(L_n)&lt;/script&gt; 为解的 frame 序列）的话，那么在所有这些 frames 的最上面，我们先枚举另一个可能的 frame，然后再沿着 &lt;script type="math/tex"&gt;(L_n)&lt;/script&gt; 一个一个枚举下去，完全没有问题啊，毕竟 &lt;script type="math/tex"&gt;G'&lt;/script&gt; 比 &lt;script type="math/tex"&gt;G&lt;/script&gt; 只是一些字符变空了。&lt;/p&gt;
 &lt;p&gt;（注意，此刻就出现了贪心的 main idea，考虑原本的（存在/最优）解，然后&lt;strong&gt;考虑&lt;/strong&gt;我们的选择对于这个属性（存在性/最优性）的影响。一般的&lt;strong&gt;考虑&lt;/strong&gt;方式为：调整假设中的解以包含我们的选择。）&lt;/p&gt;
 &lt;p&gt;于是乎，我们有了一个找到解的方式（每次枚举至少去掉一个 '┌' '┐' '└' '┘' '│' '─' 这种非空字符，最后去完就好了）。但我们需要的其实是最小化解中 frames 的数量。自然而然的我们觉得在每次枚举的时候尽可能地多去非空字符。但是我无法证明（事实上我可以举出反例）。我这样写就过了。最小化也许并不是题目所要求的。不过数据确实很弱，diss 里有人说了。&lt;/p&gt;</content><category term="Timus"></category></entry><entry><title>Intro</title><link href="https://egretwalker.github.io/intro.html" rel="alternate"></link><published>2022-02-24T00:00:00+01:00</published><updated>2022-02-24T00:00:00+01:00</updated><author><name>egretwalker</name></author><id>tag:egretwalker.github.io,2022-02-24:/intro.html</id><content type="html">&lt;p&gt;索邦大学 L1 在读。&lt;/p&gt;
-&lt;p&gt;正在学习 LEAN。在博客里会写一些 OI 题解以缅怀高中可怜的时光。&lt;/p&gt;</content><category term="misc"></category></entry></feed>
+&lt;p&gt;在博客里会写一些 OI 题解以缅怀高中可怜的时光。&lt;/p&gt;</content><category term="misc"></category></entry></feed>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>loghj - Maths</title><link href="https://egretwalker.github.io/" rel="alternate"></link><link href="https://egretwalker.github.io/feeds/maths.atom.xml" rel="self"></link><id>https://egretwalker.github.io/</id><updated>2022-06-27T00:00:00+02:00</updated><entry><title>One Liners</title><link href="https://egretwalker.github.io/one-liners.html" rel="alternate"></link><published>2022-06-27T00:00:00+02:00</published><updated>2022-06-27T00:00:00+02:00</updated><author><name>egretwalker</name></author><id>tag:egretwalker.github.io,2022-06-27:/one-liners.html</id><summary type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;\lim(a_n) = l \iff \sup\lim(a_n) = \inf\lim(a_n) = l&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;f~\text{dérivable en}~x_0~et~f'(x_0) = a \iff f(x) = f(x_0) + a(x-x_0) + o(x-x_0)&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;E~\text{parfait} \iff E = E'&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;E~\text{fermé} \iff E = \bar E …&lt;/script&gt;&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;ul&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;\lim(a_n) = l \iff \sup\lim(a_n) = \inf\lim(a_n) = l&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;f~\text{dérivable en}~x_0~et~f'(x_0) = a \iff f(x) = f(x_0) + a(x-x_0) + o(x-x_0)&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;E~\text{parfait} \iff E = E'&lt;/script&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;script type="math/tex"&gt;E~\text{fermé} \iff E = \bar E&lt;/script&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Maths"></category></entry></feed>

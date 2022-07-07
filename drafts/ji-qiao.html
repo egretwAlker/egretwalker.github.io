@@ -36,13 +36,14 @@
 
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/mathtex-script-type.min.js" integrity="sha384-jiBVvJ8NGGj5n7kJaiWwWp9AjC+Yh8rhZY3GtAX8yU28azcLgoRo4oukO87g7zDT" crossorigin="anonymous"></script>
 
-        <meta name="description" content="Tricks Subset L'extrêmité en valeur absolue 通用度：4 \max(a, b) = (a+b+|a-b|)/2 \min(a, b) = (a+b-|a-b|)/2 L'extrêmité des ensembles 通用度：2 On note..." />
+        <meta name="description" content="Tricks Subset L'extrêmité en valeur absolue 通用度：4 \max(a, b) = (a+b+|a-b|)/2 \min(a, b) = (a+b-|a-b|)/2 ab = ((a+b)^2-(a-b)^2)/4 L'extrêmité des..." />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
                 <h1><a href="https://egretwalker.github.io/">loghj</a></h1>
                 <nav><ul>
+                    <li><a href="https://egretwalker.github.io/category/maths.html">Maths</a></li>
                     <li class="active"><a href="https://egretwalker.github.io/category/misc.html">misc</a></li>
                     <li><a href="https://egretwalker.github.io/category/timus.html">Timus</a></li>
                 </ul></nav>
@@ -76,6 +77,11 @@
 <p>
 <script type="math/tex; mode=display">
 \min(a, b) = (a+b-|a-b|)/2
+</script>
+</p>
+<p>
+<script type="math/tex; mode=display">
+ab = ((a+b)^2-(a-b)^2)/4
 </script>
 </p>
 <h2 id="lextremite-des-ensembles-2">L'extrêmité des ensembles 通用度：2</h2>
@@ -239,6 +245,29 @@ d'où <script type="math/tex">a_n+{1\over n^2} \ge {2\sqrt{a_n}\over n}</script>
 Voilà...</p>
 </blockquote>
 <p>En fait, penser au binôme de Newton.</p>
+<h2 id="utilization-depsilon">Utilization d'<script type="math/tex">\epsilon</script>
+</h2>
+<ul>
+<li>
+<script type="math/tex">a\le b \iff \forall \epsilon > 0, a\le b+\epsilon</script> 看似让步，实则无所失。</li>
+<li>
+<script type="math/tex">I = \sup A \implies  \forall\epsilon>0, \exist x\in A,x>I-\epsilon</script>
+</li>
+</ul>
+<h2 id="theoreme-des-accroissements-finis-generalise">Théorème des Accroissements Finis Généralisé</h2>
+<ul>
+<li>Normal</li>
+<li>Généralisé</li>
+<li>f(x)-f(y)-g(x)+g(y) = (f-g)(x)-(f-g)(y) = (f-g)'(c) = f'(c) - g'(c) 这点小技巧还是要晓得的。</li>
+</ul>
+<h2 id="addtions-fromto-multiplications">Addtions from/to Multiplications</h2>
+<p>首先有三角函数里的一些公式，暂且坑。</p>
+<p>其次有一个比较妙的在线性里发现的式子（用来证明 <script type="math/tex">A \mapsto A^{-1}</script> 的连续性的）。</p>
+<p>
+<script type="math/tex; mode=display">
+B^{-1}-A^{-1} = B^{-1}(A-B)A^{-1}
+</script>
+</p>
 <h2 id="warning-silly-me">Warning SILLY mE</h2>
 <ul>
 <li>
