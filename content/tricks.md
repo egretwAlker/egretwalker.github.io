@@ -178,6 +178,16 @@ En fait, penser au binôme de Newton.
 - Généralisé
 - f(x)-f(y)-g(x)+g(y) = (f-g)(x)-(f-g)(y) = (f-g)'(c) = f'(c) - g'(c) 这点小技巧还是要晓得的。
 
+## Addtions from/to Multiplications
+
+首先有三角函数里的一些公式，暂且坑。
+
+其次有一个比较妙的在线性里发现的式子（用来证明 $A \mapsto A^{-1}$ 的连续性的）。
+
+$$
+B^{-1}-A^{-1} = B^{-1}(A-B)A^{-1}
+$$
+
 ## Warning SILLY mE
 
 - $\dim \mathbb{R}_n[X] = n+1$ in lieu of $n$
