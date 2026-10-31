@@ -1,0 +1,1 @@
+import{c as r,j as e,R as t,H as n}from"./bootstrap.min-YQrEJ9Bv.js";r.createRoot(document.getElementById("root")).render(e.jsx(t.StrictMode,{children:e.jsxs(e.Fragment,{children:[e.jsx(n,{}),e.jsx("div",{className:"container",children:e.jsx("p",{children:"Working on it..."})})]})}));
